@@ -39,6 +39,9 @@ const Section1 = styled.div`
 const Links = styled.a`
     color:${props=>props.color};
     margin:15px;
+    font-family: Spartan;
+    font-weight: 600;
+    font-size: 18px;
 
     &:hover {
         color:#CA6444;
