@@ -2,13 +2,14 @@ import styled from "styled-components";
 import Arrow from "../Icons/Arrow";
 import Image from 'next/image'
 import Runik from '../../public/RunikBackground.png'
-import { keyframes  } from "styled-components";
+import { useTheme } from '../../utils/provider'
+import { themes } from '../../utils/variables'
 
 
 const CardCont = styled.div`
 width: 369px;
 height: 549px;
-box-shadow: -5px 5px 10px rgba(219, 219, 219, 0.2), 5px -5px 10px rgba(219, 219, 219, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(219, 219, 219, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(219, 219, 219, 0.5);
+box-shadow: ${props=>props.shadow};
 border-radius: 10px;
 display:flex;
 justify-content:flex-end;
@@ -74,8 +75,9 @@ const Card = ({
  onCardClick =()=>{}
 
 }) =>{
+    const {theme} = useTheme();
     
-    return <CardCont onClick={()=>{onCardClick()}}>
+    return <CardCont onClick={()=>{onCardClick()}} shadow={themes[theme].cardShadow}>
         <Image src={img} layout="fill"></Image>
         <Container>
             <TitleCont>
