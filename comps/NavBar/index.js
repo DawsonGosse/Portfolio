@@ -54,7 +54,7 @@ const NavBar = ({
 }) =>{
     const {theme} = useTheme();
 
-    return <Container bgcolor={themes[theme].body} shadow={themes[theme].shadow}>
+    return <Container bgcolor={themes[theme].body} shadow={themes[theme].Shadow}>
         <Section1>
             <Moon onclick={onButtonClick} display={themes[theme].displayMoon}></Moon>
             <Sun  onclick={onButtonClick} display={themes[theme].displaySun}></Sun>

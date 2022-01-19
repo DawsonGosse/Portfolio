@@ -5,8 +5,10 @@ import NameTitle from '../comps/NameTitle';
 import { useTheme } from "../utils/provider";
 import Description from '../comps/Description';
 import Card from '../comps/Card';
+import Footer from '../comps/Footer';
 import  Nuance from '../public/NuanceBackground.png'
 import Posters from '../public/PostersBackground.png'
+
 
 const Container = styled.div`
   width:100%;
@@ -52,6 +54,7 @@ export default function Home() {
       img={Posters}
       ></Card>
     </ContentBlock>
+    <Footer></Footer>
   </Container>
   )
 }
