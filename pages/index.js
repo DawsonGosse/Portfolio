@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import NameTitle from '../comps/NameTitle';
 import { useTheme } from "../utils/provider";
 import Description from '../comps/Description';
+import Card from '../comps/Card';
+import  Nuance from '../public/NuanceBackground.png'
+import Posters from '../public/PostersBackground.png'
 
 const Container = styled.div`
   width:100%;
@@ -15,6 +18,15 @@ const ContentBlock = styled.div`
   padding: 0px 52px 0px;
   display:flex;
   justify-content:space-between;
+  margin-bottom:200px;
+`;
+const Header = styled.h2`
+  font-family: Spartan;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  color:#CA6444;
+  margin-left:61px;
 `;
 
 
@@ -25,6 +37,20 @@ export default function Home() {
     <ContentBlock>
     <NameTitle></NameTitle>
     <Description></Description>
+    </ContentBlock>
+    <Header>Highlights</Header>
+    <ContentBlock>
+      <Card></Card>
+      <Card 
+      title="Nuance"
+      date="Jan 2021 - May 2021"
+      img={Nuance}
+      ></Card>
+      <Card 
+      title="Posters"
+      date="Jan 2021 - Jan 2022"
+      img={Posters}
+      ></Card>
     </ContentBlock>
   </Container>
   )
