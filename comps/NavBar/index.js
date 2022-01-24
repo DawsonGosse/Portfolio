@@ -7,6 +7,7 @@ import Instagram from '../Icons/Instagram';
 import GitHub from '../Icons/Github';
 import Moon from '../Icons/Moon';
 import Sun from '../Icons/Sun';
+import { useRouter } from 'next/router'
 
 const Container = styled.div`
     width:100%;
@@ -14,6 +15,7 @@ const Container = styled.div`
     background-color:${props=>props.bgcolor};
     display:flex;
     box-shadow: ${props=>props.shadow}
+    z-index:5;
 `;
 const Section2 = styled.div`
     display:flex;
@@ -49,20 +51,22 @@ const Links = styled.a`
 `;
 
 const NavBar = ({
-    onButtonClick=()=>{}
+    onButtonClick=()=>{},
+
 
 }) =>{
     const {theme} = useTheme();
+    const router = useRouter();
 
-    return <Container bgcolor={themes[theme].body} shadow={themes[theme].Shadow}>
+    return <Container bgcolor={themes[theme].body} shadow={themes[theme].shadow}>
         <Section1>
             <Moon onclick={onButtonClick} display={themes[theme].displayMoon}></Moon>
             <Sun  onclick={onButtonClick} display={themes[theme].displaySun}></Sun>
         </Section1>
         <Section2>
-            <Links href='/' color={themes[theme].color}>Home</Links>
-            <Links href='/projects.js' color={themes[theme].color}>Projects</Links>
-            <Links href='/contact.js' color={themes[theme].color}>Contact</Links>
+            <Links onClick={()=>router.push("/")} color={themes[theme].color}>Home</Links>
+            <Links onClick={()=>router.push("/projects")} color={themes[theme].color}>Projects</Links>
+            <Links onClick={()=>router.push("/contact")} color={themes[theme].color}>Contact</Links>
         </Section2>
         <Section3>
             <LinkedIn color={themes[theme].color}></LinkedIn>

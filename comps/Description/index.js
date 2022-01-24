@@ -19,7 +19,9 @@ const Description = ({
 }) =>{
     
     return <Container>
-        <Text>A recently graduated UI UX Designer & Front-End Developer lorem ipsum</Text>
+        <Text>a Creative Front-End Developer & UI UX Designer skilled at working in project-orientated team environments.
+
+</Text>
     </Container>
 }
 

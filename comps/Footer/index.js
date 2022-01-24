@@ -12,13 +12,14 @@ const Container = styled.div`
     box-shadow: ${props=>props.shadow}
     align-items:center;
     justify-content:center;
+    z-index:5;
 `;
 const CopyRight = styled.h5`
     font-family: Spartan;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
-    color: ${props=>props.color};
+    color: ${props=>props.color}
 
 `;
 

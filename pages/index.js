@@ -35,7 +35,7 @@ const Header = styled.h2`
 export default function Home() {
   const {theme, setTheme} = useTheme();
   return (<Container>
-    <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
+    <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')} ></NavBar>
     <ContentBlock>
     <NameTitle></NameTitle>
     <Description></Description>
@@ -49,7 +49,7 @@ export default function Home() {
       img={Nuance}
       ></Card>
       <Card 
-      title="Posters"
+      title="Artwork"
       date="Jan 2021 - Jan 2022"
       img={Posters}
       ></Card>

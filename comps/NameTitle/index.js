@@ -29,8 +29,8 @@ const NameTitle = ({
 }) =>{
     
     return <Container>
-        <Name>Dawson {"\n\r"} Gosse.</Name>
-        <Title>UI UX Designer & Front-End Developer</Title>
+     <Name>Dawson {"\n\r"} Gosse.</Name>
+        <Title>Front-End Developer & UI / UX Designer </Title>
     </Container>
 }
 
