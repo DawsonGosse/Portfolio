@@ -5,7 +5,6 @@ import { useTheme } from '../../utils/provider'
 import { themes } from '../../utils/variables'
 import Project from "../../pages/projects";
 
-
 const CardCont = styled.div`
 width: 100vw;
 height: 479px;
@@ -60,10 +59,29 @@ color:#F3F3F3;
 margin:0px;
 `;
 
+var defaults = {
+    Title:"Runik",
+    Roles:"Lead Designer, Front-End Developer",
+    Timeline:"Sept 2021 - Dec 2021",
+    TeamSize:"6 people, 3 front-end/designers, 3 backend",
+    problem:`Everyone enjoys getting lost in their favourite book or novel and getting fully immersed in a fantastical world. But there is a problem, Humans are busy, and remembering every character, place, weapon or object can be a hassle.
+            While currently, e-readers have the option to view a word’s definitions with a tap, they do nothing to serve the user looking for a world-specific definition.`,
+    solution:`Meet Runik, our solution to make the e-reading experience 10x better. 
+            Runik is a web-app that generates 
+            custom e-reader dictionaries for 
+            your favourite fictional worlds. 
+            With Runik, you not only get your traditional dictionary but also one that’s custom-built for the book you’re reading. One-touch context, in text, while you read.`
+}
 
 
 const ProjectCard = ({
- onCardClick =()=>{}
+ onCardClick =()=>{},
+ projTitle = defaults.Title,
+ projRoles = defaults.Roles,
+ projTimeline = defaults.Timeline,
+ projTeamSize = defaults.TeamSize,
+ problem = defaults.problem,
+ solution = defaults.solution
 
 }) =>{
     const {theme} = useTheme();
@@ -71,28 +89,21 @@ const ProjectCard = ({
     return <CardCont onClick={()=>{onCardClick()}}>
         <Container>
             <Header>Project Details</Header>
-            <Title>Runik</Title>
+            <Title>{projTitle}</Title>
             <SubHeader>My Roles</SubHeader>
-            <Text>Lead Designer, Front-End Developer</Text>
+            <Text>{projRoles}</Text>
             <SubHeader>Timeline</SubHeader>
-            <Text>TEMP</Text>
+            <Text>{projTimeline}</Text>
             <SubHeader>Team Size</SubHeader>
-            <Text>6 people, 3 front-end/designers, 3 backend</Text>
+            <Text>{projTeamSize}</Text>
         </Container> 
         <Container>
             <Header>Problem</Header>
-            <Text>Everyone enjoys getting lost in their favourite book or novel and getting fully immersed in a fantastical world. But there is a problem, Humans are busy, and remembering every character, place, weapon or object can be a hassle. <br/><br/>
-While currently, e-readers have the option to view a word’s definitions with a tap, they do nothing to serve the user looking for a world-specific definition.</Text>
+            <Text>{problem}</Text>
         </Container> 
         <Container>
         <Header>Solution</Header>
-            <Text>Meet Runik, our solution to make the e-reading experience 10x better. <br/><br/>
-            Runik is a web-app that generates 
-custom e-reader dictionaries for 
-your favourite fictional worlds. <br/><br/>
-With Runik, you not only get your traditional dictionary but also one that’s custom-built for the book you’re reading. One-touch context, in text, while you read.
-
-</Text>
+            <Text>{solution}</Text>
         </Container> 
     </CardCont>
 }

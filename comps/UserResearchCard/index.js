@@ -73,10 +73,18 @@ const ArrowCont = styled.div`
 
 `;
 
-
+var defaults = {
+    Hypothesis:"Users want a way to get custom world-specific definitions without breaking immersion and looking them up",
+    Methods:"Surveys, Questionnaires, User interviews and forum research proved our hypothesis",
+    Synthesis:"Gather research and refine hypothesis and user pain-points"
+}
 
 const UserResearchCard = ({
- onCardClick =()=>{}
+ onCardClick =()=>{},
+ hypothesis = defaults.Hypothesis,
+ methods = defaults.Methods,
+ synthesis = defaults.Synthesis
+ 
 
 }) =>{
     const {theme} = useTheme();
@@ -86,21 +94,21 @@ const UserResearchCard = ({
         <Container>
             <Circle shadow={themes[theme].shadow}>
                 <SubHeader>Hypothesis</SubHeader>
-                <Text>Users want a way to get custom world-specific definitions without breaking immersion and looking them up</Text>
+                <Text>{hypothesis}</Text>
             </Circle>
             <ArrowCont>
                 <ArrowOrange></ArrowOrange>
             </ArrowCont>
             <Circle shadow={themes[theme].shadow}>
                 <SubHeader>Methods</SubHeader>
-                <Text>Surveys, Questionnaires, User interviews and forum research proved our hypothesis</Text>
+                <Text>{methods}</Text>
             </Circle>
             <ArrowCont>
                 <ArrowOrange></ArrowOrange>
             </ArrowCont>
             <Circle shadow={themes[theme].shadow}>
                 <SubHeader>Synthesis</SubHeader>
-                <Text>Gather research and refine hypothesis and user pain-points</Text>
+                <Text>{synthesis}</Text>
             </Circle>
         </Container> 
     </CardCont>

@@ -9,6 +9,10 @@ import UserResearchCard from '../../comps/UserResearchCard';
 import Bubble from '../../comps/Bubble';
 import Persona1 from '../../public/UserPersonaRunik.png';
 import Persona2 from '../../public/UserPersonaRunik2.png';
+import PrototypeCard from '../../comps/PrototypeCard';
+import PhotoCard from '../../comps/PhotoCard';
+import UserTestingCard from '../../comps/UserTestingCard';
+import Button from '../../comps/Button';
 
 
 const Container = styled.div`
@@ -50,9 +54,15 @@ z-index:-1;
 
 `;
 
+const ButCont = styled.a`
+display:flex;
+justify-content:center;
+align-items:center;
+`;
 
 
-export default function Artwork() {
+
+export default function Runik() {
   const {theme, setTheme} = useTheme();
 
   return (<Container>
@@ -68,8 +78,14 @@ export default function Artwork() {
                 <Image src={Persona2} width="505px" height="600px"></Image>
             </ImgCont>
        </BGOrange>
-       
+       <PrototypeCard text="When it came to building the interface, we wanted our design language to be minimal, modern and elegant, with little nods to the fantastical worlds. From the nav bar to the footer and everything in-between, our end-user was the focus of every decision we made."></PrototypeCard>
+       <PhotoCard></PhotoCard>
+       <UserTestingCard text='We got user feedback throughout each design iteration making sure to implement changes to better suit our intended users '></UserTestingCard>
+       <ButCont target="_blank" href="https://runik.app/" rel="noopener noreferrer">
+       <Button></Button>
+       </ButCont>
     </ContentBlock>
+
     <Footer></Footer>
   </Container>
   )

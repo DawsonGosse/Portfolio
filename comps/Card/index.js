@@ -71,7 +71,7 @@ margin-bottom:3px;
 const Card = ({
  img = Runik,
  title = "Runik",
- date = "Fed 2021 - May 2021",
+ date = "Sept 2021 - Dec 2021",
  onCardClick =()=>{}
 
 }) =>{

@@ -8,6 +8,7 @@ import GitHub from '../Icons/Github';
 import Moon from '../Icons/Moon';
 import Sun from '../Icons/Sun';
 import { useRouter } from 'next/router'
+import Link from 'next/link';  
 
 const Container = styled.div`
     width:100%;
@@ -69,9 +70,12 @@ const NavBar = ({
             <Links onClick={()=>router.push("/contact")} color={themes[theme].color}>Contact</Links>
         </Section2>
         <Section3>
+            <a target="_blank" href="https://linkedin.com/in/dawson-gosse" rel="noopener noreferrer"> 
             <LinkedIn color={themes[theme].color}></LinkedIn>
-            <Instagram color={themes[theme].color}></Instagram>
+            </a>
+            <a target="_blank" href="https://github.com/DawsonGosse" rel="noopener noreferrer">
             <GitHub color={themes[theme].color}></GitHub>
+            </a>
         </Section3>
     </Container>
 }

@@ -39,8 +39,8 @@ export default function Project() {
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <Header>Projects</Header>
     <ContentBlock>
-        <LargeCard onCardClick={()=>router.push("/")} ></LargeCard>
-        <LargeCardFlip img={NuanceLarge} title='Nuance' type='UX/IU Design, Front-end Development' roles='Roles - Lead Front-End developer, Designer' bio='Nuance is an educational app that challenges the user to question the views on certain topics.' bgcolor='#E48C34' onCardClick={()=>router.push("/")}></LargeCardFlip>
+        <LargeCard onCardClick={()=>router.push("/../Posts/runik")} ></LargeCard>
+        <LargeCardFlip img={NuanceLarge} title='Nuance' type='UX/IU Design, Front-end Development' date="Jan 2021 - May 2021" roles='Roles - Lead Front-End developer, Designer' bio='Nuance is an educational app that challenges the user to question the views on certain topics.' bgcolor='#E48C34' onCardClick={()=>router.push("/../Posts/nuance")}></LargeCardFlip>
         <LargeCard img={PostersLarge} title='Artwork' type='Graphic Design' roles='Roles - Creator' bio='TEMP' bgcolor='#E6A439' onCardClick={()=>router.push("/artwork")}></LargeCard>
     </ContentBlock>
     <Footer></Footer>

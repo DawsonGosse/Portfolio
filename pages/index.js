@@ -8,6 +8,7 @@ import Card from '../comps/Card';
 import Footer from '../comps/Footer';
 import  Nuance from '../public/NuanceBackground.png'
 import Posters from '../public/PostersBackground.png'
+import { useRouter } from 'next/router';
 
 
 const Container = styled.div`
@@ -34,6 +35,7 @@ const Header = styled.h2`
 
 export default function Home() {
   const {theme, setTheme} = useTheme();
+  const router = useRouter();
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')} ></NavBar>
     <ContentBlock>
@@ -42,16 +44,18 @@ export default function Home() {
     </ContentBlock>
     <Header>Highlights</Header>
     <ContentBlock>
-      <Card></Card>
+      <Card onCardClick={()=>router.push("/../Posts/runik")}></Card>
       <Card 
       title="Nuance"
       date="Jan 2021 - May 2021"
       img={Nuance}
+      onCardClick={()=>router.push("/../Posts/nuance")}
       ></Card>
       <Card 
       title="Artwork"
       date="Jan 2021 - Jan 2022"
       img={Posters}
+      onCardClick={()=>router.push("/../artwork")}
       ></Card>
     </ContentBlock>
     <Footer></Footer>

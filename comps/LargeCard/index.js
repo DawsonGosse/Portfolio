@@ -76,7 +76,7 @@ height:422px;
 const LargeCard = ({
  img = RunikLarge,
  title = "Runik",
- date = "Fed 2021 - May 2021",
+ date = "Sept 2021 - Dec 2021",
  roles = "Roles - lead designer, front-end developer",
  type = "UX/IU Design, Front-end Development",
  bio ="Runik is web-app that generates custom e-reader dictionaries for your favourite fictional worlds. ",
