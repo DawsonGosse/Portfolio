@@ -17,7 +17,30 @@ const Container = styled.div`
   height:100%;
 `;
 
-const ContentBlock = styled.div`
+const ContentBlock1 = styled.div`
+  width:100vw;
+  flex-wrap:wrap;
+  flex-direction:column;
+  padding: 0px 30px 0px;
+  display:flex;
+  justify-content:space-evenly;
+  margin-bottom:200px;
+
+  //Medium
+@media (min-width:481px) {
+  padding: 0px 52px 0px;
+  justify-content:space-between;
+  flex-direction:row;
+  }
+//Large
+
+@media (min-width:769px) {
+  padding: 0px 52px 0px;
+  justify-content:space-between;
+  flex-direction:row;
+  }
+`;
+const ContentBlock2 = styled.div`
   width:100vw;
   flex-wrap:wrap;
   padding: 0px 30px 0px;
@@ -52,12 +75,12 @@ export default function Home() {
   const router = useRouter();
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')} ></NavBar>
-    <ContentBlock>
+    <ContentBlock1>
     <NameTitle></NameTitle>
     <Description></Description>
-    </ContentBlock>
+    </ContentBlock1>
     <Header color={themes[theme].Header}>Highlights</Header>
-    <ContentBlock>
+    <ContentBlock2>
       <Card onCardClick={()=>router.push("/../Posts/runik")}></Card>
       <Card 
       title="Nuance"
@@ -71,7 +94,7 @@ export default function Home() {
       img={Posters}
       onCardClick={()=>router.push("/../artwork")}
       ></Card>
-    </ContentBlock>
+    </ContentBlock2>
     <Footer></Footer>
   </Container>
   )

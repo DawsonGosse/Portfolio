@@ -18,8 +18,19 @@ const CopyRight = styled.h5`
     font-family: Spartan;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
+    text-align:center;
     color: ${props=>props.color}
+
+    //Medium
+    @media (min-width:481px) {
+        font-size: 16px;
+      }
+    //Large
+    
+    @media (min-width:769px) {
+        font-size: 18px;
+      }
 
 `;
 
