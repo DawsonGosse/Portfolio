@@ -46,7 +46,7 @@ const Links = styled.a`
     font-size: 18px;
     display:none;
     &:hover {
-        color:#CA6444;
+        color:${props=>props.hcolor};
     }
     //Medium
 @media (min-width:481px) {
@@ -101,9 +101,9 @@ const NavBar = ({
             <Sun  onclick={onButtonClick} display={themes[theme].displaySun}></Sun>
         </Section1>
         <Section2>
-            <Links onClick={()=>router.push("/")} color={themes[theme].color}>Home</Links>
-            <Links onClick={()=>router.push("/projects")} color={themes[theme].color}>Projects</Links>
-            <Links onClick={()=>router.push("/contact")} color={themes[theme].color}>Contact</Links>
+            <Links onClick={()=>router.push("/")} color={themes[theme].color} hcolor={themes[theme].Highlight}>Home</Links>
+            <Links onClick={()=>router.push("/projects")} color={themes[theme].color} hcolor={themes[theme].Highlight}>Projects</Links>
+            <Links onClick={()=>router.push("/contact")} color={themes[theme].color} hcolor={themes[theme].Highlight}>Contact</Links>
         </Section2>
         <Section3>
             <SocialCont>

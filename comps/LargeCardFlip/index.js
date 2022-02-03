@@ -38,6 +38,7 @@ z-index:2;
 const TitleCont = styled.div`
 display:flex;
 flex-direction:column;
+margin-right:30px;
 `;
 const Title = styled.h3`
 font-family: Spartan;

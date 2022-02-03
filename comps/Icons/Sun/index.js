@@ -1,20 +1,24 @@
 import * as React from "react"
 import styled from "styled-components";
+import { useTheme } from '../../../utils/provider'
+import { themes } from '../../../utils/variables'
 
 const SVG = styled.svg`
 &:hover #child {
-  fill:#CA6444;
+  fill:${props=>props.hcolor};
 }
 `;
 
-const Sun = ({onclick, display}) => (
-  <SVG
+const Sun = ({onclick, display}) => {
+  const {theme} = useTheme();
+  return<SVG
     width={32}
     height={32}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     onClick={() => onclick()}
     display={display}
+    hcolor={themes[theme].Highlight}
   >
     <path id="child"
       d="M16 0c.631 0 1.143.512 1.143 1.143v2.286a1.143 1.143 0 0 1-2.286 0V1.143C14.857.512 15.37 0 16 0Z"
@@ -31,6 +35,6 @@ const Sun = ({onclick, display}) => (
       fill="#F3F3F3"
     />
   </SVG>
-)
+}
 
 export default Sun

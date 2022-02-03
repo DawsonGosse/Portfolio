@@ -1,18 +1,21 @@
 import * as React from "react"
 import styled from "styled-components"
-
+import { useTheme } from '../../../utils/provider'
+import { themes } from '../../../utils/variables'
 
 const Cont = styled.div`
     margin:15px;
 `;
 const G = styled.g`
 &:hover {
-  fill:#CA6444;
+  fill:${props=>props.hcolor};
 }
 `;
 
-const GitHub = ({ color }) => (
-    <Cont>
+const GitHub = ({ color }) => {
+  const {theme} = useTheme();
+
+  return<Cont>
   <svg
     width={32}
     height={32}
@@ -20,7 +23,7 @@ const GitHub = ({ color }) => (
     xmlns="http://www.w3.org/2000/svg"
     
   >
-    <G clipPath="url(#a)" fill={color}>
+    <G clipPath="url(#a)" fill={color} hcolor={themes[theme].Highlight}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -35,6 +38,6 @@ const GitHub = ({ color }) => (
     </defs>
   </svg>
   </Cont>
-)
+}
 
 export default GitHub

@@ -3,6 +3,7 @@ import NavBar from '../comps/NavBar'
 import styled from 'styled-components'
 import { useTheme } from "../utils/provider";
 import Footer from '../comps/Footer';
+import { themes } from '../utils/variables'
 
 
 
@@ -48,7 +49,7 @@ const ContactBlock = styled.div`
 const FormBlock = styled.div`
   flex:1;
   display:flex;
-  background-color:#CA6444;
+  background-color:${props=>props.color};
   height:100%;
   padding-top:100px;
   padding-bottom:100px;
@@ -72,7 +73,7 @@ const Header = styled.h2`
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  color:#CA6444;
+  color:${props=>props.color};
   margin-left:61px;
   margin-bottom:90px;
 `;
@@ -94,10 +95,10 @@ const Input = styled.input`
   font-style: normal;
   font-weight: semi-bold;
   font-size: 12px;
-  background-color:#CA6444;
+  background-color:${props=>props.color};
   color:#F3F3F3;
   border:none;
-  box-shadow: -5px 5px 10px rgba(182, 90, 61, 0.2), 5px -5px 10px rgba(182, 90, 61, 0.2), -5px -5px 10px rgba(222, 110, 75, 0.9), 5px 5px 13px rgba(182, 90, 61, 0.9), inset 1px 1px 2px rgba(222, 110, 75, 0.3), inset -1px -1px 2px rgba(182, 90, 61, 0.5);
+  box-shadow:${props=>props.shadow};
   height:${props=>props.height};
   width:${props=>props.width};
   padding-left:16px;
@@ -120,10 +121,10 @@ const TextArea = styled.textarea`
   font-style: normal;
   font-weight: semi-bold;
   font-size: 12px;
-  background-color:#CA6444;
+  background-color:${props=>props.color};
   color:#F3F3F3;
   border:none;
-  box-shadow: -5px 5px 10px rgba(182, 90, 61, 0.2), 5px -5px 10px rgba(182, 90, 61, 0.2), -5px -5px 10px rgba(222, 110, 75, 0.9), 5px 5px 13px rgba(182, 90, 61, 0.9), inset 1px 1px 2px rgba(222, 110, 75, 0.3), inset -1px -1px 2px rgba(182, 90, 61, 0.5);
+  box-shadow:${props=>props.shadow};
   height:${props=>props.height};
   width:${props=>props.width};
   padding-left:16px;
@@ -147,7 +148,7 @@ background: #F3F3F3;
 border-radius: 12px;
 width: 188px;
 height: 42px;
-color:#CA6444;
+color:${props=>props.color};
 font-family: Spartan;
 font-size: 18px;
 font-style: normal;
@@ -160,7 +161,7 @@ z-index:3;
 const Text = styled.p`
 font-family: Spartan;
 font-size: 18px;
-color: #CA6444;
+color: ${props=>props.color};
 margin-left:61px;
 font-weight: 600;
 `;
@@ -172,19 +173,19 @@ export default function Project() {
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <ContentBlock>
        <ContactBlock>
-        <Header>Contact</Header>
-        <Text>Email <br/><br/>Dawsonjgosse@gmail.com</Text>
-        <Text>Phone <br/><br/> 236-777-6765</Text>
+        <Header color={themes[theme].Header}>Contact</Header>
+        <Text color={themes[theme].Header}>Email <br/><br/>Dawsonjgosse@gmail.com</Text>
+        <Text color={themes[theme].Header}>Phone <br/><br/> 236-777-6765</Text>
        </ContactBlock>
-       <FormBlock>
+       <FormBlock color={themes[theme].Header}>
             <Form>
                 <DoubleBox>
-                  <Input defaultValue="First Name" type="text" width="45%" height="41px"></Input>
-                  <Input defaultValue="Last Name" type="text" width="45%" height="41px"></Input>
+                  <Input defaultValue="First Name" type="text" width="45%" height="41px" color={themes[theme].Header} shadow={themes[theme].AltShadow}></Input>
+                  <Input defaultValue="Last Name" type="text" width="45%" height="41px" color={themes[theme].Header} shadow={themes[theme].AltShadow}></Input>
                 </DoubleBox>
-                <Input defaultValue="Email" type="email" width="100%" height="41px"></Input>
-                <TextArea defaultValue="Message..." type="text" width="100%" height="260px"></TextArea>
-                <Submit>Send Message</Submit>
+                <Input defaultValue="Email" type="email" width="100%" height="41px" color={themes[theme].Header} shadow={themes[theme].AltShadow}></Input>
+                <TextArea defaultValue="Message..." type="text" width="100%" height="260px" color={themes[theme].Header} shadow={themes[theme].AltShadow}></TextArea>
+                <Submit color={themes[theme].Header}>Send Message</Submit>
             </Form>
        </FormBlock>
     </ContentBlock>

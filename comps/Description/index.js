@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useTheme } from '../../utils/provider'
+import { themes } from '../../utils/variables'
 
 const Container = styled.div`
 margin-top:50px;
@@ -23,7 +25,7 @@ font-style: normal;
 font-weight: normal;
 font-size: 12px;
 text-align: left;
-color: #CA6444;
+color:${props=>props.color};
 
 //Medium
 @media (min-width:481px) {
@@ -41,9 +43,10 @@ color: #CA6444;
 
 const Description = ({
 }) =>{
+    const {theme} = useTheme();
     
     return <Container>
-        <Text>a Creative Front-End Developer & UI UX Designer skilled at working in project-orientated team environments.
+        <Text color={themes[theme].Header} >a Creative Front-End Developer & UI UX Designer skilled at working in project-orientated team environments.
 
 </Text>
     </Container>

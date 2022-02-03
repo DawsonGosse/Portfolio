@@ -9,6 +9,7 @@ import Footer from '../comps/Footer';
 import  Nuance from '../public/NuanceBackground.png'
 import Posters from '../public/PostersBackground.png'
 import { useRouter } from 'next/router';
+import { themes } from '../utils/variables'
 
 
 const Container = styled.div`
@@ -41,7 +42,7 @@ const Header = styled.h2`
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  color:#CA6444;
+  color:${props=>props.color};
   margin-left:61px;
 `;
 
@@ -55,7 +56,7 @@ export default function Home() {
     <NameTitle></NameTitle>
     <Description></Description>
     </ContentBlock>
-    <Header>Highlights</Header>
+    <Header color={themes[theme].Header}>Highlights</Header>
     <ContentBlock>
       <Card onCardClick={()=>router.push("/../Posts/runik")}></Card>
       <Card 

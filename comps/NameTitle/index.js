@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useTheme } from '../../utils/provider'
+import { themes } from '../../utils/variables'
 
 const Container = styled.div`
 margin-top:50px;
@@ -18,7 +20,7 @@ width:317px;
 `;
 
 const Name = styled.h1`
-color:#E48C34;
+color:${props=>props.color};
 font-size:72px;
 font-family: Spartan;
 font-style: normal;
@@ -42,7 +44,7 @@ font-family: Spartan;
 font-style: normal;
 font-weight: bold;
 font-size: 12px;
-color: #CA6444;
+color: ${props=>props.color};
 margin:0px;
 margin-left:10px;
 
@@ -59,10 +61,11 @@ margin-left:10px;
 
 const NameTitle = ({
 }) =>{
+    const {theme} = useTheme();
     
     return <Container>
-     <Name>Dawson {"\n\r"} Gosse.</Name>
-        <Title>Front-End Developer & UI / UX Designer </Title>
+     <Name color={themes[theme].Title}>Dawson {"\n\r"} Gosse.</Name>
+        <Title color={themes[theme].Header}>Front-End Developer & UI / UX Designer </Title>
     </Container>
 }
 
