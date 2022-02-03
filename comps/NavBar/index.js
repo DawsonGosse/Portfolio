@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import { useTheme } from '../../utils/provider'
 import { themes } from '../../utils/variables'
 import LinkedIn from '../Icons/LinkedIn';
-import Instagram from '../Icons/Instagram';
 import GitHub from '../Icons/Github';
 import Moon from '../Icons/Moon';
 import Sun from '../Icons/Sun';
 import { useRouter } from 'next/router'
-import Link from 'next/link';  
+import Menu from '../Icons/Menu';
 
 const Container = styled.div`
     width:100%;
@@ -45,10 +44,47 @@ const Links = styled.a`
     font-family: Spartan;
     font-weight: 600;
     font-size: 18px;
-
+    display:none;
     &:hover {
         color:#CA6444;
     }
+    //Medium
+@media (min-width:481px) {
+    display:flex;
+  }
+//Large
+
+@media (min-width:769px) {
+    display:flex;
+  }
+`;
+
+const MenuCont = styled.div`
+display:flex;
+
+//Medium
+@media (min-width:481px) {
+display:none;
+}
+//Large
+
+@media (min-width:769px) {
+display:none;
+}
+`;
+
+const SocialCont = styled.div`
+display:none;
+
+//Medium
+@media (min-width:481px) {
+display:flex;
+}
+//Large
+
+@media (min-width:769px) {
+display:flex;
+}
 `;
 
 const NavBar = ({
@@ -70,12 +106,17 @@ const NavBar = ({
             <Links onClick={()=>router.push("/contact")} color={themes[theme].color}>Contact</Links>
         </Section2>
         <Section3>
-            <a target="_blank" href="https://linkedin.com/in/dawson-gosse" rel="noopener noreferrer"> 
-            <LinkedIn color={themes[theme].color}></LinkedIn>
-            </a>
-            <a target="_blank" href="https://github.com/DawsonGosse" rel="noopener noreferrer">
-            <GitHub color={themes[theme].color}></GitHub>
-            </a>
+            <SocialCont>
+                <a target="_blank" href="https://linkedin.com/in/dawson-gosse" rel="noopener noreferrer"> 
+                <LinkedIn color={themes[theme].color}></LinkedIn>
+                </a>
+                <a target="_blank" href="https://github.com/DawsonGosse" rel="noopener noreferrer">
+                <GitHub color={themes[theme].color}></GitHub>
+                </a>
+            </SocialCont>
+            <MenuCont>
+                <Menu color={themes[theme].color}/>
+            </MenuCont>
         </Section3>
     </Container>
 }

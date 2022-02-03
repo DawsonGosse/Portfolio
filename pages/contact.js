@@ -13,23 +13,58 @@ const Container = styled.div`
 const ContentBlock = styled.div`
   width:100vw;
   display:flex;
+  flex-wrap:wrap;
+  flex-direction:column;
+
+  //Medium
+  @media (min-width:481px) {
+    flex-direction:column;
+    }
+  //Large
+  
+  @media (min-width:769px) {
+    flex-direction:row;
+    }
 
 `;
 const ContactBlock = styled.div`
-  width:50vw;
+  flex:1;
   display:flex;
   height:100%;
   padding-top:125px;
   flex-direction:column;
+  padding-bottom:100px;
+
+  //Medium
+  @media (min-width:481px) {
+    padding-bottom:100px;
+    }
+  //Large
+  
+  @media (min-width:769px) {
+  padding-bottom:0px;
+    }
 `;
 const FormBlock = styled.div`
-  width:50vw;
+  flex:1;
   display:flex;
   background-color:#CA6444;
   height:100%;
-  padding-top:270px;
-  padding-bottom:215px;
+  padding-top:100px;
+  padding-bottom:100px;
   justify-content:center;
+
+  //Medium
+  @media (min-width:481px) {
+    padding-top:100px;
+    padding-bottom:100px;
+    }
+  //Large
+  
+  @media (min-width:769px) {
+    padding-top:270px;
+  padding-bottom:215px;
+    }
 
 `;
 const Header = styled.h2`
@@ -42,16 +77,23 @@ const Header = styled.h2`
   margin-bottom:90px;
 `;
 const Form = styled.form`
-width:630px;
+width:96%;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+`;
+const DoubleBox =styled.div`
+width:100%;
 display:flex;
 flex-wrap:wrap;
 justify-content:space-between;
 `;
+
 const Input = styled.input`
-font-family: Spartan;
+  font-family: Spartan;
   font-style: normal;
   font-weight: semi-bold;
-  font-size: 18px;
+  font-size: 12px;
   background-color:#CA6444;
   color:#F3F3F3;
   border:none;
@@ -62,12 +104,22 @@ font-family: Spartan;
   margin-bottom:31px;
   font-weight: 600;
   z-index:3;
+
+  //Medium
+  @media (min-width:481px) {
+    font-size: 18px;
+    }
+  //Large
+  
+  @media (min-width:769px) {
+    font-size: 18px;
+    }
 `;
 const TextArea = styled.textarea`
-font-family: Spartan;
+  font-family: Spartan;
   font-style: normal;
   font-weight: semi-bold;
-  font-size: 18px;
+  font-size: 12px;
   background-color:#CA6444;
   color:#F3F3F3;
   border:none;
@@ -79,6 +131,16 @@ font-family: Spartan;
   margin-bottom:31px;
   font-weight: 600;
   z-index:3;
+
+  //Medium
+  @media (min-width:481px) {
+    font-size: 18px;
+    }
+  //Large
+  
+  @media (min-width:769px) {
+    font-size: 18px;
+    }
 `;
 const Submit = styled.button`
 background: #F3F3F3;
@@ -116,10 +178,12 @@ export default function Project() {
        </ContactBlock>
        <FormBlock>
             <Form>
-                <Input value="First Name" type="text" width="294px" height="41px"></Input>
-                <Input value="Last Name" type="text" width="294px" height="41px"></Input>
-                <Input value="Email" type="email" width="626px" height="41px"></Input>
-                <TextArea value="Message..." type="text" width="626px" height="260px"></TextArea>
+                <DoubleBox>
+                  <Input defaultValue="First Name" type="text" width="45%" height="41px"></Input>
+                  <Input defaultValue="Last Name" type="text" width="45%" height="41px"></Input>
+                </DoubleBox>
+                <Input defaultValue="Email" type="email" width="100%" height="41px"></Input>
+                <TextArea defaultValue="Message..." type="text" width="100%" height="260px"></TextArea>
                 <Submit>Send Message</Submit>
             </Form>
        </FormBlock>

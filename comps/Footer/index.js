@@ -29,7 +29,7 @@ const Footer = ({
     const {theme} = useTheme();
 
     return <Container bgcolor={themes[theme].body} shadow={themes[theme].footerShadow}>
-        <CopyRight color={themes[theme].color}>Dawson Gosse 2022</CopyRight>
+        <CopyRight color={themes[theme].color}>Designed and created by Dawson Gosse 2022</CopyRight>
     </Container>
 }
 

@@ -20,10 +20,20 @@ background-color:${props=>props.bgcolor};
 const Container = styled.div`
 display:flex;
 justify-content:space-between;
-width:50%;
+width:100%;
 padding-left:63px;
 padding-top:34px;
 z-index:2;
+
+//Medium
+@media (min-width:481px) {
+    width:50%;
+  }
+//Large
+
+@media (min-width:769px) {
+    width:50%;
+  }
 `;
 const TitleCont = styled.div`
 display:flex;
@@ -55,7 +65,7 @@ font-size: 14px;
 color:#F3F3F3;
 margin:0px;
 margin-bottom:7px;
-width:522px;
+width:100%;
 `;
 const SmallText = styled.h6`
 font-family: Spartan;
@@ -67,10 +77,20 @@ margin:0px;
 margin-bottom:28px;
 `;
 const ImgCont = styled.div`
-display:flex;
+display:none;
 position:relative;
 width:50%;
 height:422px;
+
+//Medium
+@media (min-width:481px) {
+    display:none;
+  }
+//Large
+
+@media (min-width:769px) {
+    display:flex;
+  }
 `;
 
 const LargeCard = ({

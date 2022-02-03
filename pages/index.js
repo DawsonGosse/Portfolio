@@ -18,10 +18,23 @@ const Container = styled.div`
 
 const ContentBlock = styled.div`
   width:100vw;
-  padding: 0px 52px 0px;
+  flex-wrap:wrap;
+  padding: 0px 30px 0px;
   display:flex;
-  justify-content:space-between;
+  justify-content:space-evenly;
   margin-bottom:200px;
+
+  //Medium
+@media (min-width:481px) {
+  padding: 0px 52px 0px;
+  justify-content:space-between;
+  }
+//Large
+
+@media (min-width:769px) {
+  padding: 0px 52px 0px;
+  justify-content:space-evenly;
+  }
 `;
 const Header = styled.h2`
   font-family: Spartan;

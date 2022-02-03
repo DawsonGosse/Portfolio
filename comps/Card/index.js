@@ -14,13 +14,37 @@ border-radius: 10px;
 display:flex;
 justify-content:flex-end;
 flex-direction:column;
-margin:35px;
+margin:0px;
 position:relative;
+transform: scale(0.8);
 
 &:hover {
-    transform: scale(1.04);
+    transform: scale(0.84);
     transition: linear 0.2s;
 }
+
+//Medium
+@media (min-width:481px) {
+    transform: scale(0.9);
+    margin:20px;
+
+    &:hover {
+        transform: scale(0.94);
+        transition: linear 0.2s;
+    }
+  }
+//Large
+
+@media (min-width:769px) {
+    transform: scale(1.00);
+    margin:35px;
+
+    &:hover {
+        transform: scale(1.04);
+        transition: linear 0.2s;
+    }
+  }
+
 `;
 const Container = styled.div`
 display:flex;
