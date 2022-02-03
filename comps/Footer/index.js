@@ -20,7 +20,7 @@ const CopyRight = styled.h5`
     font-weight: 600;
     font-size: 14px;
     text-align:center;
-    color: ${props=>props.color}
+    color: ${props=>props.color};
 
     //Medium
     @media (min-width:481px) {
