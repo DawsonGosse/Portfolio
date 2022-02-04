@@ -115,7 +115,7 @@ const NavBar = ({
                 </a>
             </SocialCont>
             <MenuCont>
-                <Menu color={themes[theme].color}/>
+                <Menu color={themes[theme].color} onclick={()=>router.push("/navigate")}/>
             </MenuCont>
         </Section3>
     </Container>
