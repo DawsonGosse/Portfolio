@@ -46,26 +46,24 @@ const ContactBlock = styled.div`
   padding-bottom:0px;
     }
 `;
-const FormBlock = styled.div`
-  flex:1;
-  display:flex;
-  background-color:${props=>props.color};
-  height:100%;
-  padding-top:100px;
-  padding-bottom:100px;
-  justify-content:center;
+const AboutBlock = styled.div`
+flex:1;
+display:flex;
+height:1000px;
+padding-top:125px;
+flex-direction:column;
+padding-right:61px;
+background-color:${props=>props.color};
 
-  //Medium
-  @media (min-width:481px) {
-    padding-top:100px;
-    padding-bottom:100px;
-    }
-  //Large
-  
-  @media (min-width:769px) {
-    padding-top:270px;
-  padding-bottom:215px;
-    }
+//Medium
+@media (min-width:481px) {
+  padding-bottom:100px;
+  }
+//Large
+
+@media (min-width:769px) {
+padding-bottom:0px;
+  }
 
 `;
 const Header = styled.h2`
@@ -77,86 +75,6 @@ const Header = styled.h2`
   margin-left:61px;
   margin-bottom:90px;
 `;
-const Form = styled.form`
-width:96%;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-`;
-const DoubleBox =styled.div`
-width:100%;
-display:flex;
-flex-wrap:wrap;
-justify-content:space-between;
-`;
-
-const Input = styled.input`
-  font-family: Spartan;
-  font-style: normal;
-  font-weight: semi-bold;
-  font-size: 12px;
-  background-color:${props=>props.color};
-  color:#F3F3F3;
-  border:none;
-  box-shadow:${props=>props.shadow};
-  height:${props=>props.height};
-  width:${props=>props.width};
-  padding-left:16px;
-  margin-bottom:31px;
-  font-weight: 600;
-  z-index:3;
-
-  //Medium
-  @media (min-width:481px) {
-    font-size: 18px;
-    }
-  //Large
-  
-  @media (min-width:769px) {
-    font-size: 18px;
-    }
-`;
-const TextArea = styled.textarea`
-  font-family: Spartan;
-  font-style: normal;
-  font-weight: semi-bold;
-  font-size: 12px;
-  background-color:${props=>props.color};
-  color:#F3F3F3;
-  border:none;
-  box-shadow:${props=>props.shadow};
-  height:${props=>props.height};
-  width:${props=>props.width};
-  padding-left:16px;
-  padding-top:14px;
-  margin-bottom:31px;
-  font-weight: 600;
-  z-index:3;
-
-  //Medium
-  @media (min-width:481px) {
-    font-size: 18px;
-    }
-  //Large
-  
-  @media (min-width:769px) {
-    font-size: 18px;
-    }
-`;
-const Submit = styled.button`
-background: #F3F3F3;
-border-radius: 12px;
-width: 188px;
-height: 42px;
-color:${props=>props.color};
-font-family: Spartan;
-font-size: 18px;
-font-style: normal;
-border:none;
-padding-top:5px;
-font-weight: 600;
-z-index:3;
-`;
 
 const Text = styled.p`
 font-family: Spartan;
@@ -166,6 +84,16 @@ margin-left:61px;
 font-weight: 600;
 `;
 
+const TextAlt = styled.p`
+font-family: Spartan;
+font-size: 18px;
+margin-top:0px;
+color: ${props=>props.color};
+font-weight: 600;
+line-height: 142.5%;
+margin-left:60px;
+`;
+
 
 export default function Project() {
   const {theme, setTheme} = useTheme();
@@ -173,21 +101,27 @@ export default function Project() {
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <ContentBlock>
        <ContactBlock>
-        <Header color={themes[theme].Header}>Contact</Header>
-        <Text color={themes[theme].Header}>Email <br/><br/>Dawsonjgosse@gmail.com</Text>
-        <Text color={themes[theme].Header}>Phone <br/><br/> 236-777-6765</Text>
+          <Header color={themes[theme].Header}>Contact</Header>
+          <Text color={themes[theme].Header}>Email <br/><br/>Dawsonjgosse@gmail.com</Text>
+          <Text color={themes[theme].Header}>Phone <br/><br/> 236-777-6765</Text>
        </ContactBlock>
-       <FormBlock color={themes[theme].Header}>
-            <Form>
-                <DoubleBox>
-                  <Input defaultValue="First Name" type="text" width="45%" height="41px" color={themes[theme].Header} shadow={themes[theme].AltShadow}></Input>
-                  <Input defaultValue="Last Name" type="text" width="45%" height="41px" color={themes[theme].Header} shadow={themes[theme].AltShadow}></Input>
-                </DoubleBox>
-                <Input defaultValue="Email" type="email" width="100%" height="41px" color={themes[theme].Header} shadow={themes[theme].AltShadow}></Input>
-                <TextArea defaultValue="Message..." type="text" width="100%" height="260px" color={themes[theme].Header} shadow={themes[theme].AltShadow}></TextArea>
-                <Submit color={themes[theme].Header}>Send Message</Submit>
-            </Form>
-       </FormBlock>
+       <AboutBlock color={themes[theme].Header}>
+          <Header color={themes[theme].AltHeader}>About Me</Header>
+          <TextAlt color={themes[theme].AltHeader}>Hey there! Im Dawson, a Creative Front-end developer & UI/UX designer skilled at working in project-orientated team environments creating cross-platform applications.
+          <br/><br/>
+          I have experience In...
+          <br/><br/>
+          - web development technologies (Next.js, WordPress, HTML & CSS, Javascript)<br/>
+          - Creating simple and elegant visual UI/UX designs and systems for web applications<br/>
+          - design processes and collaborative environments<br/>
+          - gathering and analyzing qualitative and quantitative data to identify opportunities and areas to experiment and optimize<br/>
+          - creating compelling visual designs and typographical layouts        <br/><br/>
+
+          Intrested in working together?<br/>
+          Send me a message!
+
+          </TextAlt>
+       </AboutBlock>
     </ContentBlock>
     <Footer></Footer>
   </Container>
