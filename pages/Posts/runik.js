@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react';
 import { useTheme } from "../../utils/provider";
+import { themes } from '../../utils/variables'
 import Image from 'next/image'
 import NavBar from '../../comps/NavBar'
 import Footer from '../../comps/Footer';
@@ -36,7 +37,7 @@ const Header = styled.h2`
   margin:61px;
 `;
 const BGOrange = styled.div`
-background-color:#E48C34;
+background-color:${props=>props.bgcolor};
 position:relative;
 width:100vw;
 display:flex;
@@ -99,7 +100,7 @@ export default function Runik() {
     <ContentBlock>
        <ProjectCard></ProjectCard>
        <UserResearchCard></UserResearchCard>
-       <BGOrange>
+       <BGOrange bgcolor={themes[theme].Title}>
             <Header>Personas</Header>
             <ImgCont>
                 <Image src={Persona1} width="505px" height="600px"></Image>

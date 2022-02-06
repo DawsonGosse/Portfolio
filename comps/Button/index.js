@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { useTheme } from '../../utils/provider'
+import { themes } from '../../utils/variables'
 
 const VistButton = styled.button`
-background: #CA6444;
+background: ${props=>props.bgcolor};
 border-radius: 12px;
 width: 188px;
 height: 42px;
@@ -21,7 +23,8 @@ const Button = ({
 
    
    }) =>{
-       
-       return <VistButton>Vist App</VistButton>
+    const {theme} = useTheme();
+
+       return <VistButton bgcolor={themes[theme].Highlight}>Vist App</VistButton>
    }
    export default Button;

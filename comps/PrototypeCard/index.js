@@ -35,7 +35,7 @@ font-family: Spartan;
 font-style: bold;
 font-weight: 700;
 font-size: 24px;
-color:#CA6444;
+color:${props=>props.color};
 margin:0px;
 margin-bottom:24px;
 margin-left:57px;
@@ -45,7 +45,7 @@ font-family: Spartan;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
-color:#CA6444;
+color:${props=>props.color};
 margin:0px;
 margin-top:20px;
 width:216px;
@@ -83,9 +83,9 @@ const PrototypeCard = ({
     const {theme} = useTheme();
     
     return <CardCont onClick={()=>{onCardClick()}} >
-       <Header>Prototyping & Design</Header>
+       <Header color={themes[theme].Highlight}>Prototyping & Design</Header>
         <Container>
-            <Text>
+            <Text color={themes[theme].Highlight}>
                 {text}
             </Text>
             <ImgCont>

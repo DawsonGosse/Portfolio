@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { useEffect, useState } from 'react';
 import { useTheme } from "../../utils/provider";
+import { themes } from '../../utils/variables'
 import Image from 'next/image'
 import NavBar from '../../comps/NavBar'
 import Footer from '../../comps/Footer';
@@ -37,7 +38,7 @@ const Header = styled.h2`
   margin:61px;
 `;
 const BGOrange = styled.div`
-background-color:#E48C34;
+background-color:${props=>props.bgcolor};
 position:relative;
 width:100vw;
 display:flex;
@@ -110,7 +111,7 @@ export default function Nuance() {
     <ContentBlock>
        <ProjectCard projTitle={data.Title} projRoles={data.Roles} projTimeline={data.Timeline} projTeamSize={data.TeamSize} problem={data.problem} solution={data.solution}></ProjectCard>
        <UserResearchCard hypothesis={data.Hypothesis} methods={data.Methods} synthesis={data.Synthesis}></UserResearchCard>
-       <BGOrange>
+       <BGOrange bgcolor={themes[theme].Title}>
             <Header>Personas</Header>
             <ImgCont>
                 <Image src={Persona1} width="604px" height="448px"></Image>

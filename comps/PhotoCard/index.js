@@ -14,7 +14,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 margin-top:50px;
-background-color:#E6A439;
+background-color:${props=>props.bgcolor};
 height:590px;
 `;
 const Container = styled.div`
@@ -72,7 +72,7 @@ const PhotoCard = ({
 }) =>{
     const {theme} = useTheme();
     
-    return <CardCont onClick={()=>{onCardClick()}} >
+    return <CardCont onClick={()=>{onCardClick()}} bgcolor={themes[theme].Alt}>
         <Container>
             <ImgCont width={width} height={height}>
             <Image src={img} layout="fill"></Image>

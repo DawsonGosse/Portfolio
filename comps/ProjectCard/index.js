@@ -12,7 +12,7 @@ display:flex;
 position:relative;
 margin-bottom:80px;
 margin-top:50px;
-background-color:#CA6444;
+background-color:${props=>props.bgcolor};
 padding-left:27px;
 flex-wrap:wrap;
 flex-direction:column;
@@ -114,7 +114,7 @@ const ProjectCard = ({
 }) =>{
     const {theme} = useTheme();
     
-    return <CardCont onClick={()=>{onCardClick()}}>
+    return <CardCont onClick={()=>{onCardClick()}}  bgcolor={themes[theme].Highlight}>
         <Container>
             <Header>Project Details</Header>
             <Title>{projTitle}</Title>

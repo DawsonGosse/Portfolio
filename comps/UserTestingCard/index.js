@@ -36,7 +36,7 @@ font-family: Spartan;
 font-style: bold;
 font-weight: 700;
 font-size: 24px;
-color:#CA6444;
+color:${props=>props.color};
 margin:0px;
 margin-bottom:24px;
 margin-left:57px;
@@ -46,7 +46,7 @@ font-family: Spartan;
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
-color:#CA6444;
+color:${props=>props.color};
 margin:0px;
 margin-top:20px;
 margin-bottom:20px;
@@ -88,9 +88,9 @@ const UserTestingCard = ({
     const {theme} = useTheme();
     
     return <CardCont onClick={()=>{onCardClick()}} >
-       <Header>User Testing</Header>
+       <Header color={themes[theme].Highlight}>User Testing</Header>
         <Container>
-            <Text>
+            <Text color={themes[theme].Highlight}>
                 {text}
             </Text>
             <ImgCont width={width} height={height}>

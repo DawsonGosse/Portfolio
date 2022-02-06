@@ -11,6 +11,7 @@ width: 100vw;
 display:flex;
 position:relative;
 flex-direction:column;
+height:450px;
 `;
 const Container = styled.div`
 display:flex;
@@ -36,7 +37,7 @@ font-family: Spartan;
 font-style: bold;
 font-weight: 700;
 font-size: 24px;
-color:#CA6444;
+color:${props=>props.color};
 margin:0px;
 margin-bottom:24px;
 margin-left:57px;
@@ -46,7 +47,7 @@ font-family: Spartan;
 font-style: bold;
 font-weight: 700;
 font-size: 16px;
-color:#CA6444;
+color:${props=>props.color};
 margin:0px;
 margin-top:20px;
 margin-bottom:10px;
@@ -70,7 +71,7 @@ font-family: Spartan;
 font-style: normal;
 font-weight: 400;
 font-size: 12px;
-color:#CA6444;
+color:${props=>props.color};
 margin:0px;
 margin-top:10px;
 text-align:center;
@@ -166,30 +167,30 @@ const UserResearchCard = ({
     const {theme} = useTheme();
     
     return <CardCont onClick={()=>{onCardClick()}} >
-        <Header>User Research</Header>
+        <Header color={themes[theme].Highlight}>User Research</Header>
         <Container>
             <BubbleCont>
                 <Circle shadow={themes[theme].shadow}>
-                    <SubHeader>Hypothesis</SubHeader>
-                    <Text>{hypothesis}</Text>
+                    <SubHeader color={themes[theme].Highlight}>Hypothesis</SubHeader>
+                    <Text color={themes[theme].Highlight}>{hypothesis}</Text>
                 </Circle>
             </BubbleCont>
             <ArrowCont>
-                <ArrowOrange></ArrowOrange>
+                <ArrowOrange color={themes[theme].Highlight}></ArrowOrange>
             </ArrowCont>
             <BubbleCont>
                 <Circle shadow={themes[theme].shadow}>
-                    <SubHeader>Methods</SubHeader>
-                    <Text>{methods}</Text>
+                    <SubHeader color={themes[theme].Highlight}>Methods</SubHeader>
+                    <Text color={themes[theme].Highlight}>{methods}</Text>
                 </Circle>
             </BubbleCont>
             <ArrowCont>
-                <ArrowOrange></ArrowOrange>
+                <ArrowOrange color={themes[theme].Highlight}></ArrowOrange>
             </ArrowCont>
             <BubbleCont>
                 <Circle shadow={themes[theme].shadow}>
-                    <SubHeader>Synthesis</SubHeader>
-                    <Text>{synthesis}</Text>
+                    <SubHeader color={themes[theme].Highlight}>Synthesis</SubHeader>
+                    <Text color={themes[theme].Highlight}>{synthesis}</Text>
                 </Circle>
             </BubbleCont>
         </Container> 
