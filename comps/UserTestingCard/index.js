@@ -16,7 +16,20 @@ const Container = styled.div`
 display:flex;
 margin-left:57px;
 margin-right:57px;
-justify-content:space-between;
+justify-content:center;
+flex-direction:column;
+
+//Medium
+@media (min-width:801px) {
+    flex-direction:column;
+    justify-content:center;
+}
+
+//Large
+@media (min-width:1000px) {
+    flex-direction:row;
+    justify-content:space-between;
+}
 `;
 const Header = styled.h4`
 font-family: Spartan;
@@ -36,6 +49,7 @@ font-size: 14px;
 color:#CA6444;
 margin:0px;
 margin-top:20px;
+margin-bottom:20px;
 width:216px;
 `;
 const ImgCont = styled.div`
@@ -44,15 +58,31 @@ position:relative;
 height: ${props=>props.height};
 width:${props=>props.width};
 justify-content:center;
-align-items:flex-start;
+align-items:center;
+
+//Medium
+@media (min-width:801px) {
+    justify-content:center;
+    align-items:center;
+    height:600px;
+    width:300px;
+}
+
+//Large
+@media (min-width:1000px) {
+    justify-content:center;
+    align-items:flex-start;
+    height:1105px;
+    width:800px;
+}
 `;
 
 const UserTestingCard = ({
  onCardClick =()=>{},
  img = Prototype,
  text = "Default",
- height = "1105px",
- width = "70%"
+ height = "400px",
+ width = "200px"
 
 }) =>{
     const {theme} = useTheme();

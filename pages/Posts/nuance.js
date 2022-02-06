@@ -39,21 +39,51 @@ const Header = styled.h2`
 const BGOrange = styled.div`
 background-color:#E48C34;
 position:relative;
+width:100vw;
 display:flex;
 flex-direction:column;
-height:862px;
+height:1000px;
 z-index:-3;
+
+//Medium
+@media (min-width:550px) {
+  height:1000px;
+  justif-content;center;
+  align-items:center;
+}
+//Large
+
+@media (min-width:1248px) {
+  height:648px;
+}
 `;
 const ImgCont = styled.div`
 display:flex;
 position:relative;
-height:448px;
-width:1300px;
-justify-content:space-between;
-margin-left:74px;
+flex-direction:column;
+height:800px;
+width:100%;
+justify-content:space-center;
 z-index:-1;
 
+//Medium
+@media (min-width:550px) {
+  flex-direction:column;
+  justify-content:space-evenly;
+  align-items:space-evenly;
+  width:505px;
+  height:800px;
+}
+//Large
+
+@media (min-width:1248px) {
+  flex-direction:row;
+  justify-content:space-evenly;
+  padding:20px;
+  width:100%;
+}
 `;
+
 
 var data = {
     Title:"Nuance",
@@ -82,8 +112,6 @@ export default function Nuance() {
        <UserResearchCard hypothesis={data.Hypothesis} methods={data.Methods} synthesis={data.Synthesis}></UserResearchCard>
        <BGOrange>
             <Header>Personas</Header>
-            <Bubble top="430px"></Bubble>
-            <Bubble left="800px" size='220px' text='We targeted a younger audience who has a love for learning'></Bubble>
             <ImgCont>
                 <Image src={Persona1} width="604px" height="448px"></Image>
                 <Image src={Persona2} width="604px" height="448px"></Image>

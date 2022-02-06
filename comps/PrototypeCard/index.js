@@ -18,6 +18,17 @@ display:flex;
 margin-left:57px;
 margin-right:57px;
 justify-content:space-between;
+flex-direction:column;
+
+//Medium
+@media (min-width:801px) {
+    flex-direction:column;
+}
+
+//Large
+@media (min-width:1000px) {
+    flex-direction:row;
+}
 `;
 const Header = styled.h4`
 font-family: Spartan;
@@ -38,14 +49,29 @@ color:#CA6444;
 margin:0px;
 margin-top:20px;
 width:216px;
+margin-bottom:30px;
 `;
 const ImgCont = styled.div`
 display:flex;
 position:relative;
-height:486px;
-width:70%;
+height:200px;
+width:100%;
 justify-content:center;
 align-items:flex-start;
+
+//Medium
+@media (min-width:801px) {
+    align-items:center;
+    height:486px;
+}
+
+//Large
+@media (min-width:1000px) {
+    align-items:flex-start;
+    height:486px;
+    width:80%;
+    margin-left:30px;
+}
 `;
 
 const PrototypeCard = ({
@@ -63,7 +89,7 @@ const PrototypeCard = ({
                 {text}
             </Text>
             <ImgCont>
-            <Image src={img} layout="fill"></Image>
+                <Image src={img} layout="fill"></Image>
             </ImgCont>
         </Container> 
     </CardCont>

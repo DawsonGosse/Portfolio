@@ -38,20 +38,49 @@ const Header = styled.h2`
 const BGOrange = styled.div`
 background-color:#E48C34;
 position:relative;
+width:100vw;
 display:flex;
 flex-direction:column;
-height:1000px;
+height:1400px;
 z-index:-3;
+
+//Medium
+@media (min-width:550px) {
+  height:1400px;
+  justif-content;center;
+  align-items:center;
+}
+//Large
+
+@media (min-width:1000px) {
+  height:1000px;
+}
 `;
 const ImgCont = styled.div`
 display:flex;
 position:relative;
-height:600px;
-width:1100px;
-justify-content:space-between;
-margin-left:170px;
+flex-direction:column;
+height:1240px;
+width:100%;
+justify-content:space-center;
 z-index:-1;
 
+//Medium
+@media (min-width:550px) {
+  flex-direction:column;
+  justify-content:space-evenly;
+  align-items:space-evenly;
+  width:505px;
+  height:1240px;
+}
+//Large
+
+@media (min-width:1000px) {
+  flex-direction:row;
+  justify-content:space-evenly;
+  padding:20px;
+  width:100%;
+}
 `;
 
 const ButCont = styled.a`
@@ -72,7 +101,6 @@ export default function Runik() {
        <UserResearchCard></UserResearchCard>
        <BGOrange>
             <Header>Personas</Header>
-            <Bubble top="550px"></Bubble>
             <ImgCont>
                 <Image src={Persona1} width="505px" height="600px"></Image>
                 <Image src={Persona2} width="505px" height="600px"></Image>

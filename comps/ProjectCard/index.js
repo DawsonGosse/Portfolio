@@ -7,13 +7,27 @@ import Project from "../../pages/projects";
 
 const CardCont = styled.div`
 width: 100vw;
-height: 479px;
+height: 100%;
 display:flex;
 position:relative;
 margin-bottom:80px;
 margin-top:50px;
 background-color:#CA6444;
 padding-left:27px;
+flex-wrap:wrap;
+flex-direction:column;
+
+//Medium
+@media (min-width:801px) {
+    flex-direction:column;
+
+}
+//Large
+
+@media (min-width:1000px) {
+    flex-direction:row;
+
+}
 `;
 const Container = styled.div`
 display:flex;
@@ -21,6 +35,8 @@ flex-direction:column;
 flex:1;
 padding-left:30px;
 padding-right:50px;
+margin-bottom:40px;
+
 `;
 const Title = styled.h3`
 font-family: Spartan;
@@ -34,11 +50,23 @@ const Header = styled.h4`
 font-family: Spartan;
 font-style: bold;
 font-weight: 700;
-font-size: 24px;
+font-size: 18px;
 color:#F3F3F3;
 margin:0px;
 margin-bottom:24px;
 margin-top:40px;
+
+//Medium
+@media (min-width:801px) {
+    font-size:20px;
+
+}
+//Large
+
+@media (min-width:1000px) {
+    font-size:24px;
+
+}
 `;
 const SubHeader = styled.h5`
 font-family: Spartan;

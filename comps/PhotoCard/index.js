@@ -11,8 +11,11 @@ width: 100vw;
 display:flex;
 position:relative;
 flex-direction:column;
+justify-content:center;
+align-items:center;
 margin-top:50px;
 background-color:#E6A439;
+height:590px;
 `;
 const Container = styled.div`
 display:flex;
@@ -20,7 +23,36 @@ margin-left:57px;
 margin-right:57px;
 justify-content:center;
 align-items:center;
-height:590px;
+height:30%;
+width:95%;
+
+//Xsmall
+@media (min-width:425px) {
+    height:100px;
+    width:350px;
+
+}
+
+//small
+@media (min-width:620px) {
+    height:200px;
+    width:600px;
+
+}
+
+//Medium
+@media (min-width:801px) {
+    height:300px;
+    width:800px;
+
+}
+//Large
+
+@media (min-width:1000px) {
+    height:400px;
+    width:1000px;
+
+}
 `;
 const ImgCont = styled.div`
 display:flex;
@@ -34,8 +66,8 @@ align-items:center;
 const PhotoCard = ({
  onCardClick =()=>{},
  img = Runik,
- height = "430px",
- width = "84%"
+ height = "100%",
+ width = "100%"
 
 }) =>{
     const {theme} = useTheme();
