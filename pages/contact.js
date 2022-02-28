@@ -107,7 +107,7 @@ export default function Project() {
        </ContactBlock>
        <AboutBlock color={themes[theme].Header}>
           <Header color={themes[theme].AltHeader}>About Me</Header>
-          <TextAlt color={themes[theme].AltHeader}>Hey there! I'm Dawson, a Creative Front-end developer & UI/UX designer skilled at working in project-orientated team environments creating cross-platform applications.
+          <TextAlt color={themes[theme].AltHeader}>Hey there! Im Dawson, a Creative Front-end developer & UI/UX designer skilled at working in project-orientated team environments creating cross-platform applications.
           <br/><br/>
           I have experience In...
           <br/><br/>
