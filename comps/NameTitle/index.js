@@ -64,7 +64,7 @@ const NameTitle = ({
     const {theme} = useTheme();
     
     return <Container>
-     <Name color={themes[theme].Title}>Dawson {"\n\r"} Gosse.</Name>
+     <Name color={themes[theme].Header}>Dawson {"\n\r"} Gosse.</Name>
         <Title color={themes[theme].Header}>Front-End Developer & UI / UX Designer </Title>
     </Container>
 }

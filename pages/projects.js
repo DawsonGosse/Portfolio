@@ -39,9 +39,9 @@ export default function Project() {
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <Header  color={themes[theme].Header}>Projects</Header>
     <ContentBlock>
-        <LargeCard onCardClick={()=>router.push("/../Posts/runik")} bgcolor={themes[theme].Alt}></LargeCard>
-        <LargeCardFlip img={NuanceLarge} title='Nuance' type='UX/IU Design, Front-end Development' date="Jan 2021 - May 2021" roles='Roles - Lead Front-End developer, Designer' bio='Nuance is an educational app that challenges the user to question the views on certain topics.' bgcolor={themes[theme].Header} onCardClick={()=>router.push("/../Posts/nuance")}></LargeCardFlip>
-        <LargeCard img={PostersLarge} title='Artwork' type='Graphic Design' roles='Roles - Creator' bio='Artwork, posters, & illustrations all created by me' bgcolor={themes[theme].Title} onCardClick={()=>router.push("/artwork")}></LargeCard>
+        <LargeCard onCardClick={()=>router.push("/../Posts/runik")} bgcolor={themes[theme].Header}></LargeCard>
+        <LargeCardFlip img={NuanceLarge} title='Nuance' type='UX/IU Design, Front-end Development' date="Jan 2021 - May 2021" roles='Roles - Lead Front-End developer, Designer' bio='Nuance is an educational app that challenges the user to question the views on certain topics.' bgcolor={themes[theme].Title} onCardClick={()=>router.push("/../Posts/nuance")}></LargeCardFlip>
+        <LargeCard img={PostersLarge} title='Artwork' type='Graphic Design' roles='Roles - Creator' bio='Artwork, posters, & illustrations all created by me' bgcolor={themes[theme].Alt} onCardClick={()=>router.push("/artwork")}></LargeCard>
     </ContentBlock>
     <Footer></Footer>
   </Container>
