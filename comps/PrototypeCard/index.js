@@ -20,15 +20,6 @@ margin-right:57px;
 justify-content:space-between;
 flex-direction:column;
 
-//Medium
-@media (min-width:801px) {
-
-}
-
-//Large
-@media (min-width:1000px) {
-
-}
 `;
 const Header = styled.h4`
 font-family: Spartan;
@@ -54,16 +45,9 @@ const ImgCont = styled.div`
 width:90%;
 position:relative;
 margin-top:25px;
+margin-bottom:25px;
 padding:0;
-//Medium
-@media (min-width:801px) {
 
-}
-
-//Large
-@media (min-width:1000px) {
-
-}
 `;
 
 const PrototypeCard = ({

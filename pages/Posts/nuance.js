@@ -16,6 +16,9 @@ import UserTestingCard from '../../comps/UserTestingCard';
 import NuanceProto from '../../public/NuancePrototype.png'
 import NuanceHifi from '../../public/NuanceHifi.png'
 import NuanceUserTesting from '../../public/NuanceUserTesting.png'
+import WireFrame from '../../public/WireFrameNuance.png'
+import MidFi from '../../public/MidFiNuance.png'
+import HiFi from '../../public/HiFiNuance.png'
 
 const Container = styled.div`
   width:100%;
@@ -34,29 +37,15 @@ const Header = styled.h2`
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  color:#F3F3F3;
-  margin:61px;
+  color:#ED5662;
+
 `;
-const BGOrange = styled.div`
-background-color:${props=>props.bgcolor};
+const PersonaCard = styled.div`
 position:relative;
-width:100vw;
 display:flex;
 flex-direction:column;
-height:1000px;
-z-index:-3;
-
-//Medium
-@media (min-width:550px) {
-  height:1000px;
-  justif-content;center;
-  align-items:center;
-}
-//Large
-
-@media (min-width:1248px) {
-  height:648px;
-}
+height:100%;
+margin-left:61px;
 `;
 const ImgCont = styled.div`
 display:flex;
@@ -109,18 +98,36 @@ export default function Nuance() {
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <ContentBlock>
-       <ProjectCard projTitle={data.Title} projRoles={data.Roles} projTimeline={data.Timeline} projTeamSize={data.TeamSize} problem={data.problem} solution={data.solution}></ProjectCard>
-       <UserResearchCard hypothesis={data.Hypothesis} methods={data.Methods} synthesis={data.Synthesis}></UserResearchCard>
-       <BGOrange bgcolor={themes[theme].Title}>
+       <ProjectCard 
+       projTitle={data.Title} 
+       projRoles={data.Roles} 
+       projTimeline={data.Timeline} 
+       projTeamSize={data.TeamSize} 
+       problem={data.problem} 
+       solution={data.solution}
+       hrefApp={"https://github.com/DawsonGosse/Nuance-App"}
+       hrefGit={"https://github.com/DawsonGosse/Nuance-App"}
+       ></ProjectCard>
+       <UserResearchCard 
+       hypothesis={data.Hypothesis} 
+       methods={data.Methods} 
+       synthesis={data.Synthesis}
+       ></UserResearchCard>
+       <PersonaCard 
+       bgcolor={themes[theme].Title}
+       >
             <Header>Personas</Header>
             <ImgCont>
                 <Image src={Persona1} width="604px" height="448px"></Image>
                 <Image src={Persona2} width="604px" height="448px"></Image>
             </ImgCont>
-       </BGOrange>
-       <PrototypeCard text={data.Prototype} img={NuanceProto}></PrototypeCard>
-       <PhotoCard img={NuanceHifi} width='80%' height='504px'></PhotoCard>
-       <UserTestingCard width="75%" height="675px" text='We got user feedback throughout each design iteration making sure to implement changes to better suit our intended users ' img={NuanceUserTesting}></UserTestingCard>
+       </PersonaCard>
+       <PrototypeCard
+        text={data.Prototype} 
+        img1={WireFrame}
+        img2={MidFi}
+        img3={HiFi}
+      ></PrototypeCard>
     </ContentBlock>
     <Footer></Footer>
   </Container>

@@ -120,7 +120,10 @@ const ProjectCard = ({
  projTimeline = defaults.Timeline,
  projTeamSize = defaults.TeamSize,
  problem = defaults.problem,
- solution = defaults.solution
+ solution = defaults.solution,
+ hrefApp = "https://runik.app/",
+ hrefGit = "https://github.com/DawsonGosse"
+
 
 }) =>{
     const {theme} = useTheme();
@@ -144,10 +147,10 @@ const ProjectCard = ({
         <Header>Solution</Header>
             <Text>{solution}</Text>
             <SubContainer>
-                <a target="_blank" href="https://github.com/DawsonGosse" rel="noopener noreferrer">
+                <a target="_blank" href={hrefGit} rel="noopener noreferrer">
                     <GitHubAlt color={themes[theme].body}></GitHubAlt>
                 </a>
-                <a target="_blank" href="https://runik.app/" rel="noopener noreferrer">
+                <a target="_blank" href={hrefApp} rel="noopener noreferrer">
                     <Button text="Vist App" bgcolor="#fff"></Button>    
                 </a>
             </SubContainer>

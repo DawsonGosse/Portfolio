@@ -1,19 +1,13 @@
 import styled from 'styled-components'
-import { useEffect, useState } from 'react';
 import { useTheme } from "../../utils/provider";
-import { themes } from '../../utils/variables'
 import Image from 'next/image'
 import NavBar from '../../comps/NavBar'
 import Footer from '../../comps/Footer';
 import ProjectCard from '../../comps/ProjectCard';
 import UserResearchCard from '../../comps/UserResearchCard';
-import Bubble from '../../comps/Bubble';
 import Persona1 from '../../public/UserPersonaRunik.png';
 import Persona2 from '../../public/UserPersonaRunik2.png';
 import PrototypeCard from '../../comps/PrototypeCard';
-import PhotoCard from '../../comps/PhotoCard';
-import UserTestingCard from '../../comps/UserTestingCard';
-import Button from '../../comps/Button';
 import HeaderImage from '../../public/HeaderImageRunik.png'
 import WireFrame from '../../public/WireFrameRunik.png'
 import MidFi from '../../public/MidFiRunik.png'
@@ -58,11 +52,6 @@ padding:0;
 
 `;
 
-const ButCont = styled.a`
-display:flex;
-justify-content:center;
-align-items:center;
-`;
 
 const ImageHeader = styled.div`
 width:100%;
@@ -75,24 +64,37 @@ padding:0;
 
 export default function Runik() {
   const {theme, setTheme} = useTheme();
+  const linebreak = '\n';
 
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <ImageHeader>
-      <Image src={HeaderImage} layout='responsive' objectFit='cover'></Image>
+      <Image 
+      src={HeaderImage} 
+      layout='responsive' 
+      objectFit='cover'
+      ></Image>
     </ImageHeader>
     <ContentBlock>
-       <ProjectCard></ProjectCard>
+       <ProjectCard
+       hrefGit="https://github.com/Runik-3"
+       ></ProjectCard>
        <UserResearchCard></UserResearchCard>
        <PersonaCard>
             <Header>Personas</Header>
             <ImgCont>
-                <Image src={Persona1} layout='responsive'></Image>
-                <Image src={Persona2} layout='responsive'></Image>
+                <Image 
+                src={Persona1} 
+                layout='responsive'
+                ></Image>
+                <Image 
+                src={Persona2} 
+                layout='responsive'
+                ></Image>
             </ImgCont>
        </PersonaCard>
        <PrototypeCard 
-       text="When it came to building the interface, we wanted our design language to be minimal, modern and elegant, with little nods to the fantastical worlds. From the nav bar to the footer and everything in-between, our end-user was the focus of every decision we made."
+       text={`When it came to building the interface, we wanted our design language to be minimal, modern and elegant, with little nods to the fantastical worlds. From the nav bar to the footer and everything in-between, our end-user was the focus of every decision we made.`}
        img1={WireFrame}
        img2={MidFi}
        img3={HiFi}
