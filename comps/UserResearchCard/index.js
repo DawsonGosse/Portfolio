@@ -11,7 +11,19 @@ width: 100vw;
 display:flex;
 position:relative;
 flex-direction:column;
-height:450px;
+height:800px;
+
+//Medium
+@media (min-width:801px) {
+    flex-direction:column;
+    height:450px;
+}
+//Large
+
+@media (min-width:1000px) {
+    height:450px;
+
+}
 `;
 const Container = styled.div`
 display:flex;
@@ -75,6 +87,7 @@ color:${props=>props.color};
 margin:0px;
 margin-top:10px;
 text-align:center;
+padding:10px;
 
 //Medium
 @media (min-width:801px) {
@@ -91,28 +104,29 @@ text-align:center;
 }
 `;
 const Circle = styled.div`
-width: 100%;
-height: 100%;
 border-radius:100%;
 box-shadow: ${props=>props.shadow}
 display:flex;
 align-items:center;
 justify-content:flex-start;
 flex-direction:column;
-padding:15px;
-padding-left:25px;
+width:205px;
+height:205px;
+margin:20px;
 
 //Medium
 @media (min-width:801px) {
     padding:15px;
-    padding-left:25px;
+    margin:10px;
+    width:205px;
+    height:205px;
 
 }
 //Large
 
 @media (min-width:1000px) {
-    padding:20px;
-    padding-left:30px;
+    width:305px;
+    height:305px;
 }
 `;
 const ArrowCont = styled.div`
@@ -132,20 +146,23 @@ align-items:center;
 `;
 const BubbleCont = styled.div`
 display:flex;
-height:50%;
+justify-content:space-evenly;
+flex-direction:column;
+
 
 //Medium
-@media (min-width:205px) {
+@media (min-width:801px) {
     height:205px;
-    width:205px;
     margin:20px;
+    flex-direction:row;
 }
 //Large
 
 @media (min-width:1000px) {
     height:305px;
-    width:305px;
+    width:95vw;
     margin:10px;
+    flex-direction:row;
     
 }
 `;
@@ -174,20 +191,20 @@ const UserResearchCard = ({
                     <SubHeader color={themes[theme].Highlight}>Hypothesis</SubHeader>
                     <Text color={themes[theme].Highlight}>{hypothesis}</Text>
                 </Circle>
-            </BubbleCont>
+
             <ArrowCont>
                 <ArrowOrange color={themes[theme].Highlight}></ArrowOrange>
             </ArrowCont>
-            <BubbleCont>
+
                 <Circle shadow={themes[theme].shadow}>
                     <SubHeader color={themes[theme].Highlight}>Methods</SubHeader>
                     <Text color={themes[theme].Highlight}>{methods}</Text>
                 </Circle>
-            </BubbleCont>
+
             <ArrowCont>
                 <ArrowOrange color={themes[theme].Highlight}></ArrowOrange>
             </ArrowCont>
-            <BubbleCont>
+
                 <Circle shadow={themes[theme].shadow}>
                     <SubHeader color={themes[theme].Highlight}>Synthesis</SubHeader>
                     <Text color={themes[theme].Highlight}>{synthesis}</Text>

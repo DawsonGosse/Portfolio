@@ -4,6 +4,8 @@ import RunikLarge from '../../public/RunikLargeCard.png'
 import { useTheme } from '../../utils/provider'
 import { themes } from '../../utils/variables'
 import Project from "../../pages/projects";
+import Button from "../Button";
+import GitHubAlt from "../Icons/GithubAlt";
 
 const CardCont = styled.div`
 width: 100vw;
@@ -11,7 +13,6 @@ height: 100%;
 display:flex;
 position:relative;
 margin-bottom:80px;
-margin-top:50px;
 background-color:${props=>props.bgcolor};
 padding-left:27px;
 flex-wrap:wrap;
@@ -38,6 +39,13 @@ padding-right:50px;
 margin-bottom:40px;
 
 `;
+
+const SubContainer = styled.div`
+display:flex;
+align-items:center;
+padding-top:140px;
+`
+
 const Title = styled.h3`
 font-family: Spartan;
 font-style: normal;
@@ -87,6 +95,9 @@ color:#F3F3F3;
 margin:0px;
 `;
 
+
+
+
 var defaults = {
     Title:"Runik",
     Roles:"Lead Designer, Front-End Developer",
@@ -132,6 +143,14 @@ const ProjectCard = ({
         <Container>
         <Header>Solution</Header>
             <Text>{solution}</Text>
+            <SubContainer>
+                <a target="_blank" href="https://github.com/DawsonGosse" rel="noopener noreferrer">
+                    <GitHubAlt color={themes[theme].body}></GitHubAlt>
+                </a>
+                <a target="_blank" href="https://runik.app/" rel="noopener noreferrer">
+                    <Button text="Vist App" bgcolor="#fff"></Button>    
+                </a>
+            </SubContainer>
         </Container> 
     </CardCont>
 }

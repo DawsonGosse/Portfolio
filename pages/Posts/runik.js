@@ -14,6 +14,11 @@ import PrototypeCard from '../../comps/PrototypeCard';
 import PhotoCard from '../../comps/PhotoCard';
 import UserTestingCard from '../../comps/UserTestingCard';
 import Button from '../../comps/Button';
+import HeaderImage from '../../public/HeaderImageRunik.png'
+import WireFrame from '../../public/WireFrameRunik.png'
+import MidFi from '../../public/MidFiRunik.png'
+import HiFi from '../../public/HiFiRunik.png'
+
 
 
 const Container = styled.div`
@@ -33,55 +38,24 @@ const Header = styled.h2`
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  color:#F3F3F3;
-  margin:61px;
+  color:#ED5662;
+  margin-bottom:61px;
 `;
-const BGOrange = styled.div`
-background-color:${props=>props.bgcolor};
+const PersonaCard = styled.div`
 position:relative;
-width:100vw;
 display:flex;
 flex-direction:column;
-height:1400px;
-z-index:-3;
+height:100%;
+margin-left:61px;
 
-//Medium
-@media (min-width:550px) {
-  height:1400px;
-  justif-content;center;
-  align-items:center;
-}
-//Large
 
-@media (min-width:1000px) {
-  height:1000px;
-}
 `;
 const ImgCont = styled.div`
-display:flex;
+width:90%;
 position:relative;
-flex-direction:column;
-height:1240px;
-width:100%;
-justify-content:space-center;
-z-index:-1;
+margin:0;
+padding:0;
 
-//Medium
-@media (min-width:550px) {
-  flex-direction:column;
-  justify-content:space-evenly;
-  align-items:space-evenly;
-  width:505px;
-  height:1240px;
-}
-//Large
-
-@media (min-width:1000px) {
-  flex-direction:row;
-  justify-content:space-evenly;
-  padding:20px;
-  width:100%;
-}
 `;
 
 const ButCont = styled.a`
@@ -90,6 +64,13 @@ justify-content:center;
 align-items:center;
 `;
 
+const ImageHeader = styled.div`
+width:100%;
+position:relative;
+margin:0;
+padding:0;
+`
+
 
 
 export default function Runik() {
@@ -97,22 +78,25 @@ export default function Runik() {
 
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
+    <ImageHeader>
+      <Image src={HeaderImage} layout='responsive' objectFit='cover'></Image>
+    </ImageHeader>
     <ContentBlock>
        <ProjectCard></ProjectCard>
        <UserResearchCard></UserResearchCard>
-       <BGOrange bgcolor={themes[theme].Title}>
+       <PersonaCard>
             <Header>Personas</Header>
             <ImgCont>
-                <Image src={Persona1} width="505px" height="600px"></Image>
-                <Image src={Persona2} width="505px" height="600px"></Image>
+                <Image src={Persona1} layout='responsive'></Image>
+                <Image src={Persona2} layout='responsive'></Image>
             </ImgCont>
-       </BGOrange>
-       <PrototypeCard text="When it came to building the interface, we wanted our design language to be minimal, modern and elegant, with little nods to the fantastical worlds. From the nav bar to the footer and everything in-between, our end-user was the focus of every decision we made."></PrototypeCard>
-       <PhotoCard></PhotoCard>
-       <UserTestingCard text='We got user feedback throughout each design iteration making sure to implement changes to better suit our intended users '></UserTestingCard>
-       <ButCont target="_blank" href="https://runik.app/" rel="noopener noreferrer">
-       <Button></Button>
-       </ButCont>
+       </PersonaCard>
+       <PrototypeCard 
+       text="When it came to building the interface, we wanted our design language to be minimal, modern and elegant, with little nods to the fantastical worlds. From the nav bar to the footer and everything in-between, our end-user was the focus of every decision we made."
+       img1={WireFrame}
+       img2={MidFi}
+       img3={HiFi}
+       ></PrototypeCard>
     </ContentBlock>
 
     <Footer></Footer>

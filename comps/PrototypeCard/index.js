@@ -22,12 +22,12 @@ flex-direction:column;
 
 //Medium
 @media (min-width:801px) {
-    flex-direction:column;
+
 }
 
 //Large
 @media (min-width:1000px) {
-    flex-direction:row;
+
 }
 `;
 const Header = styled.h4`
@@ -38,7 +38,6 @@ font-size: 24px;
 color:${props=>props.color};
 margin:0px;
 margin-bottom:24px;
-margin-left:57px;
 `;
 const Text = styled.p`
 font-family: Spartan;
@@ -52,44 +51,48 @@ width:216px;
 margin-bottom:30px;
 `;
 const ImgCont = styled.div`
-display:flex;
+width:90%;
 position:relative;
-height:200px;
-width:100%;
-justify-content:center;
-align-items:flex-start;
-
+margin-top:25px;
+padding:0;
 //Medium
 @media (min-width:801px) {
-    align-items:center;
-    height:486px;
+
 }
 
 //Large
 @media (min-width:1000px) {
-    align-items:flex-start;
-    height:486px;
-    width:80%;
-    margin-left:30px;
+
 }
 `;
 
 const PrototypeCard = ({
  onCardClick =()=>{},
- img = Prototype,
+ img1 = Prototype,
+ img2 = Prototype,
+ img3 = Prototype,
  text = "Default"
 
 }) =>{
     const {theme} = useTheme();
     
     return <CardCont onClick={()=>{onCardClick()}} >
-       <Header color={themes[theme].Highlight}>Prototyping & Design</Header>
         <Container>
+        <Header color={themes[theme].Highlight}>Prototyping & Design</Header>
             <Text color={themes[theme].Highlight}>
                 {text}
             </Text>
+            <Header color={themes[theme].Highlight}>WireFrame</Header>
             <ImgCont>
-                <Image src={img} layout="fill"></Image>
+                <Image src={img1} layout="responsive"></Image>
+            </ImgCont>
+            <Header color={themes[theme].Highlight}>Mid-Fi</Header>
+            <ImgCont>
+                <Image src={img2} layout="responsive"></Image>
+            </ImgCont>
+            <Header color={themes[theme].Highlight}>High-Fi</Header>
+            <ImgCont>
+                <Image src={img3} layout="responsive"></Image>
             </ImgCont>
         </Container> 
     </CardCont>
