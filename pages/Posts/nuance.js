@@ -37,7 +37,7 @@ const Header = styled.h2`
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  color:#ED5662;
+  color:${props=>props.color};
 
 `;
 const PersonaCard = styled.div`
@@ -116,7 +116,7 @@ export default function Nuance() {
        <PersonaCard 
        bgcolor={themes[theme].Title}
        >
-            <Header>Personas</Header>
+            <Header color={themes[theme].Highlight}>Personas</Header>
             <ImgCont>
                 <Image src={Persona1} width="604px" height="448px"></Image>
                 <Image src={Persona2} width="604px" height="448px"></Image>

@@ -10,6 +10,7 @@ const CardCont = styled.div`
 width: 369px;
 height: 549px;
 box-shadow: ${props=>props.shadow};
+background-color:#f3f3f3;
 border-radius: 10px;
 display:flex;
 justify-content:flex-end;
@@ -66,7 +67,7 @@ color:#5C5769;
 margin:0px;
 margin-bottom:14px;
 `;
-const Date = styled.h6`
+const Type = styled.h6`
 font-family: Spartan;
 font-style: normal;
 font-weight: normal;
@@ -95,18 +96,18 @@ margin-bottom:3px;
 const Card = ({
  img = Runik,
  title = "Runik",
- date = "Sept 2021 - Dec 2021",
+ type = "Development - UI/UX",
  onCardClick =()=>{}
 
 }) =>{
     const {theme} = useTheme();
     
     return <CardCont onClick={()=>{onCardClick()}} shadow={themes[theme].cardShadow}>
-        <Image src={img} layout="fill"></Image>
+        <Image src={img} layout="fill" objectFit="cover"></Image>
         <Container>
             <TitleCont>
                 <Title>{title}</Title>
-                <Date>{date}</Date>
+                <Type>{type}</Type>
             </TitleCont>
             <ReadMoreCont>
                 <ReadMore>Read More</ReadMore>

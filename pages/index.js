@@ -7,7 +7,7 @@ import Description from '../comps/Description';
 import Card from '../comps/Card';
 import Footer from '../comps/Footer';
 import  Nuance from '../public/NuanceBackground.png'
-import Posters from '../public/PostersBackground.png'
+import TinyPaws from '../public/TinyPaws.png'
 import { useRouter } from 'next/router';
 import { themes } from '../utils/variables'
 
@@ -84,15 +84,15 @@ export default function Home() {
       <Card onCardClick={()=>router.push("/../Posts/runik")}></Card>
       <Card 
       title="Nuance"
-      date="Jan 2021 - May 2021"
+      type="Development - UI/UX"
       img={Nuance}
       onCardClick={()=>router.push("/../Posts/nuance")}
       ></Card>
       <Card 
-      title="Artwork"
-      date="Jan 2021 - Jan 2022"
-      img={Posters}
-      onCardClick={()=>router.push("/../artwork")}
+      title="TinyPaws"
+      type="UI/UX - Wordpress"
+      img={TinyPaws}
+      onCardClick={()=>router.push("/../Posts/tinyPaws")}
       ></Card>
     </ContentBlock2>
     <Footer></Footer>

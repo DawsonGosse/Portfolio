@@ -6,13 +6,13 @@ import NavBar from '../../comps/NavBar'
 import Footer from '../../comps/Footer';
 import ProjectCard from '../../comps/ProjectCard';
 import UserResearchCard from '../../comps/UserResearchCard';
-import Persona1 from '../../public/UserPersonaRunik.png';
-import Persona2 from '../../public/UserPersonaRunik2.png';
+import Persona1 from '../../public/TinyPawsPersona1.png';
+import Persona2 from '../../public/TinyPawsPersona2.png';
 import PrototypeCard from '../../comps/PrototypeCard';
-import HeaderImage from '../../public/HeaderImageRunik.png'
-import WireFrame from '../../public/WireFrameRunik.png'
-import MidFi from '../../public/MidFiRunik.png'
-import HiFi from '../../public/HiFiRunik.png'
+import HeaderImage from '../../public/HeaderImgTinyPaws.png'
+import WireFrame from '../../public/WireFrameTinyPaws.png'
+import MidFi from '../../public/MidFiTinyPaws.png'
+import HiFi from '../../public/HiFiTinyPaws.png'
 
 
 
@@ -61,9 +61,22 @@ margin:0;
 padding:0;
 `
 
+var data = {
+    Title:"TinyPaws",
+    Roles:"Developer, UI/UX Designer",
+    Timeline:"Mar 2021 - May 2021",
+    TeamSize:"3 People, mixed roles",
+    problem:`We were challenge to create a wordpress site in a simulated freelance - client enviroment for school. Our client was a cat adoption/hosting agency that needed a complete website redesign.`,
+    solution:`From ideation to final product we designed, developed and redesigned until TinyPaws was born`,
+    Hypothesis:"Users want to adopt/host cats but find the process long and tedious",
+    Methods:"Surveys, Polls, User interviews and research on topics, methods and bias proved our hypothesis",
+    Synthesis:"Gather research and refine hypothesis and user pain-points, develop solution",
+    Prototype:"We worked side by side with our client to build exactly what they were looking for. colours, navigation, images, and more where all approved by our client and backed by our research"
+}
 
 
-export default function Runik() {
+
+export default function TinyPaws() {
   const {theme, setTheme} = useTheme();
   const linebreak = '\n';
 
@@ -77,10 +90,21 @@ export default function Runik() {
       ></Image>
     </ImageHeader>
     <ContentBlock>
-       <ProjectCard
-       hrefGit="https://github.com/Runik-3"
-       ></ProjectCard>
-       <UserResearchCard></UserResearchCard>
+    <ProjectCard 
+       projTitle={data.Title} 
+       projRoles={data.Roles} 
+       projTimeline={data.Timeline} 
+       projTeamSize={data.TeamSize} 
+       problem={data.problem} 
+       solution={data.solution}
+       hrefApp={"http://www.kellymenzul.ca/Tinypaws/"}
+       hrefGit={""}
+    ></ProjectCard>
+       <UserResearchCard
+        hypothesis={data.Hypothesis} 
+        methods={data.Methods} 
+        synthesis={data.Synthesis}
+       ></UserResearchCard>
        <PersonaCard>
             <Header color={themes[theme].Highlight}>Personas</Header>
             <ImgCont>
@@ -95,7 +119,7 @@ export default function Runik() {
             </ImgCont>
        </PersonaCard>
        <PrototypeCard 
-       text={`When it came to building the interface, we wanted our design language to be minimal, modern and elegant, with little nods to the fantastical worlds. From the nav bar to the footer and everything in-between, our end-user was the focus of every decision we made.`}
+       text={data.Prototype}
        img1={WireFrame}
        img2={MidFi}
        img3={HiFi}

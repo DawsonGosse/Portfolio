@@ -102,8 +102,8 @@ const NavBar = ({
         </Section1>
         <Section2>
             <Links onClick={()=>router.push("/")} color={themes[theme].color} hcolor={themes[theme].Highlight}>Home</Links>
-            <Links onClick={()=>router.push("/projects")} color={themes[theme].color} hcolor={themes[theme].Highlight}>Projects</Links>
-            <Links onClick={()=>router.push("/contact")} color={themes[theme].color} hcolor={themes[theme].Highlight}>Contact</Links>
+            <Links onClick={()=>router.push("/projects")} color={themes[theme].color} hcolor={themes[theme].Highlight}>Development</Links>
+            <Links onClick={()=>router.push("/contact")} color={themes[theme].color} hcolor={themes[theme].Highlight}>About</Links>
         </Section2>
         <Section3>
             <SocialCont>
