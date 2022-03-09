@@ -7,7 +7,7 @@ import { themes } from '../../utils/variables'
 
 const CardCont = styled.div`
 width: 100vw;
-height: 479px;
+height: 100%;
 display:flex;
 position:relative;
 margin-bottom:80px;
@@ -61,12 +61,10 @@ margin:0px;
 margin-bottom:28px;
 `;
 const ImgCont = styled.div`
-display:flex;
+width:40%;
 position:relative;
-height:479px;
-width:35%;
-justify-content:center;
-align-items:flex-start;
+padding:0;
+margin-left:30px;
 `;
 
 const ArtworkCard = ({
@@ -75,8 +73,6 @@ const ArtworkCard = ({
  date = "Fed 2021 - May 2021",
  roles = "Roles - lead designer, front-end developer",
  type = "UX/IU Design, Front-end Development",
- width ="100px",
- height ="100px",
  onCardClick =()=>{}
 
 }) =>{
@@ -84,14 +80,13 @@ const ArtworkCard = ({
     
     return <CardCont onClick={()=>{onCardClick()}}>
         <ImgCont>
-            <Image src={img} width={width} height={height}></Image>
+            <Image layout="responsive" src={img} objectFit="cover"></Image>
         </ImgCont>
         <Container>
             <TitleCont>
                 <Text color={themes[theme].color}>{type}</Text>
                 <SmallText color={themes[theme].color}>{roles}</SmallText>
                 <Title color={themes[theme].color}>{title}</Title>
-
             </TitleCont>
         </Container>  
     </CardCont>

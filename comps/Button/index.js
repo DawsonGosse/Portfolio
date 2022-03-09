@@ -34,6 +34,6 @@ const Button = ({
    }) =>{
     const {theme} = useTheme();
 
-       return <ButtonCont bgcolor={bgcolor} color={color}>{text}</ButtonCont>
+       return <ButtonCont bgcolor={bgcolor} color={color} onClick={onCardClick}>{text} </ButtonCont>
    }
    export default Button;

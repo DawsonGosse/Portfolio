@@ -48,30 +48,10 @@ height:100%;
 margin-left:61px;
 `;
 const ImgCont = styled.div`
-display:flex;
+width:90%;
 position:relative;
-flex-direction:column;
-height:800px;
-width:100%;
-justify-content:space-center;
-z-index:-1;
-
-//Medium
-@media (min-width:550px) {
-  flex-direction:column;
-  justify-content:space-evenly;
-  align-items:space-evenly;
-  width:505px;
-  height:800px;
-}
-//Large
-
-@media (min-width:1248px) {
-  flex-direction:row;
-  justify-content:space-evenly;
-  padding:20px;
-  width:100%;
-}
+margin:0;
+padding:0;
 `;
 
 
@@ -118,8 +98,8 @@ export default function Nuance() {
        >
             <Header color={themes[theme].Highlight}>Personas</Header>
             <ImgCont>
-                <Image src={Persona1} width="604px" height="448px"></Image>
-                <Image src={Persona2} width="604px" height="448px"></Image>
+                <Image src={Persona1} layout="responsive"></Image>
+                <Image src={Persona2} layout="responsive"></Image>
             </ImgCont>
        </PersonaCard>
        <PrototypeCard

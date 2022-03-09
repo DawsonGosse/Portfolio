@@ -10,6 +10,7 @@ import  Nuance from '../public/NuanceBackground.png'
 import TinyPaws from '../public/TinyPaws.png'
 import { useRouter } from 'next/router';
 import { themes } from '../utils/variables'
+import Button from '../comps/Button';
 
 
 const Container = styled.div`
@@ -46,7 +47,7 @@ const ContentBlock2 = styled.div`
   padding: 0px 30px 0px;
   display:flex;
   justify-content:space-evenly;
-  margin-bottom:200px;
+  margin-bottom:100px;
 
   //Medium
 @media (min-width:481px) {
@@ -60,14 +61,82 @@ const ContentBlock2 = styled.div`
   justify-content:space-evenly;
   }
 `;
+
+const ContentBlock3 = styled.div`
+  width:100vw;
+  flex-wrap:wrap;
+  flex-direction:column;
+  display:flex;
+  justify-content:space-evenly;
+  margin-bottom:100px;
+
+  //Medium
+@media (min-width:481px) {
+  justify-content:space-between;
+  flex-direction:row;
+  }
+//Large
+
+@media (min-width:769px) {
+  justify-content:space-between;
+  flex-direction:row;
+  }
+`;
 const Header = styled.h2`
   font-family: Spartan;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   color:${props=>props.color};
-  margin-left:61px;
+  margin-left:30px;
+
+
+//Medium
+@media (min-width:481px) {
+    margin-left:61px;
+  }
+//Large
+
+@media (min-width:769px) {
+    margin-left:61px;
+  }
 `;
+const Text = styled.p`
+font-family: Spartan;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+text-align: left;
+color:${props=>props.color};
+margin-left:30px;
+padding-right:30px;
+
+//Medium
+@media (min-width:481px) {
+    font-size:16px;
+    margin-left:61px;
+  }
+//Large
+
+@media (min-width:769px) {
+    font-size:20px;
+    margin-left:61px;
+  }
+`;
+
+const ButCont = styled.div`
+margin-left:30px;
+
+//Medium
+@media (min-width:481px) {
+    margin-left:61px;
+  }
+//Large
+
+@media (min-width:769px) {
+    margin-left:61px;
+  }
+`
 
 
 export default function Home() {
@@ -95,6 +164,14 @@ export default function Home() {
       onCardClick={()=>router.push("/../Posts/tinyPaws")}
       ></Card>
     </ContentBlock2>
+    <ContentBlock3>
+      <Header color={themes[theme].Header}>Gallery</Header>
+      <Text color={themes[theme].Header} >Wondering how this could possibly get better? <br/><br/>
+  Come check out the gallery, a collection of some side projects and hobbie peices. everything from illustrations and photoshop projects, to posters and doodles can be found here!</Text>
+      <ButCont>
+        <Button text='View Gallery' bgcolor={themes[theme].Header} color={themes[theme].body} onCardClick={()=>router.push("/../artwork")}></Button>
+      </ButCont>
+    </ContentBlock3>
     <Footer></Footer>
   </Container>
   )

@@ -50,7 +50,7 @@ export default function Artwork() {
   return (<Container>
     <ContentBlock>
             <Links onClick={()=>router.push("/")} color={themes[theme].Header} hcolor={themes[theme].Alt}>Home</Links>
-            <Links onClick={()=>router.push("/projects")} color={themes[theme].Header} hcolor={themes[theme].Alt}>Projects</Links>
+            <Links onClick={()=>router.push("/projects")} color={themes[theme].Header} hcolor={themes[theme].Alt}>Development</Links>
             <Links onClick={()=>router.push("/contact")} color={themes[theme].Header} hcolor={themes[theme].Alt}>Contact</Links>
     </ContentBlock>
     <Footer></Footer>

@@ -4,7 +4,7 @@ import { themes } from '../../utils/variables'
 
 const Container = styled.div`
 margin-top:50px;
-width:317px;
+
 
 //Medium
 @media (min-width:481px) {
@@ -21,7 +21,7 @@ width:317px;
 
 const Name = styled.h1`
 color:${props=>props.color};
-font-size:72px;
+font-size:60px;
 font-family: Spartan;
 font-style: normal;
 font-weight: 800;

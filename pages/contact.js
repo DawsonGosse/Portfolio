@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { useTheme } from "../utils/provider";
 import Footer from '../comps/Footer';
 import { themes } from '../utils/variables'
+import Button from '../comps/Button';
+import { useRouter } from 'next/router';
 
 
 
@@ -97,6 +99,7 @@ margin-left:60px;
 
 export default function Project() {
   const {theme, setTheme} = useTheme();
+  const router = useRouter();
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <ContentBlock>
@@ -117,9 +120,11 @@ export default function Project() {
           - gathering and analyzing qualitative and quantitative data to identify opportunities and areas to experiment and optimize<br/>
           - creating compelling visual designs and typographical layouts        <br/><br/>
 
-          Interested in working together?<br/>
-          Send me a message!
+          But wait theres more!<br/><br/>
 
+          Come take a look at some of my side projects and hobbies here!<br/><br/>
+
+          <Button text='View Gallery' bgcolor={themes[theme].body} color={themes[theme].Header} onCardClick={()=>router.push("/../artwork")}></Button>
           </TextAlt>
        </AboutBlock>
     </ContentBlock>

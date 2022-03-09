@@ -10,6 +10,11 @@ import Boston from '../public/Artwork/Boston.jpg'
 import LostInADream from '../public/Artwork/LostInADream.png'
 import Proms from '../public/Artwork/Proms.jpg'
 import Walradad from '../public/Artwork/Walradad.png'
+import PixelArt1 from '../public/PixelArt1.PNG'
+import PixelArt2 from '../public/PixelArt2.PNG'
+import Doodle1 from '../public/Doodle1.png'
+import Doodle2 from '../public/Doodle2.png'
+
 
 
 
@@ -42,11 +47,15 @@ export default function Artwork() {
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <ContentBlock>
-        <ArtworkCard img={Proms} width='357px' height='479px' title='The Proms' type='Poster' roles='Created in Illustrator' date='May 2021'></ArtworkCard>
-        <ArtworkCard img={LostInADream} width='373px' height='479px' title='Lost In A Dream' type='Poster' roles='Created in Photoshop' date='Dec 2021'></ArtworkCard>
-        <ArtworkCard img={Ana} width='269px' height='479px' title='Ana De Armas' type='Portrait Illustration' roles='Created in Photoshop' date='Nov 2021'></ArtworkCard>
-        <ArtworkCard img={Walradad} width='359px' height='238px' title='Walradad' type='Poster' roles='Created in Photoshop' date='Oct 2021'></ArtworkCard>
-        <ArtworkCard img={Boston} width='373px' height='287px' title='Boston Dynamics' type='Illustration' roles='Created in Illustrator' date='Mar 2021'></ArtworkCard>
+        <ArtworkCard img={Proms} title='The Proms' type='Poster' roles='Created in Illustrator' date='May 2021'></ArtworkCard>
+        <ArtworkCard img={LostInADream} title='Lost In A Dream' type='Poster' roles='Created in Photoshop' date='Dec 2021'></ArtworkCard>
+        <ArtworkCard img={Ana} title='Ana De Armas' type='Portrait Illustration' roles='Created in Photoshop' date='Nov 2021'></ArtworkCard>
+        <ArtworkCard img={Walradad} title='Walradad' type='Poster' roles='Created in Photoshop' date='Oct 2021'></ArtworkCard>
+        <ArtworkCard img={Boston} title='Boston Dynamics' type='Illustration' roles='Created in Illustrator' date='Mar 2021'></ArtworkCard>
+        <ArtworkCard img={PixelArt1} title='Pixel Artwork 1' type='PixelArt' roles='Created in Aseprite' date='Aug 2021'></ArtworkCard>
+        <ArtworkCard img={PixelArt2} title='Pixel Artwork 2' type='PixelArt' roles='Created in Aseprite' date='Aug 2021'></ArtworkCard>
+        <ArtworkCard img={Doodle1} title='Doodle 1' type='Drawing' roles='Hand drawn' date='Jan 2022'></ArtworkCard>
+        <ArtworkCard img={Doodle2} title='Doodle 2' type='Drawing' roles='Hand drawn' date='Jul 2021'></ArtworkCard>
     </ContentBlock>
     <Footer></Footer>
   </Container>

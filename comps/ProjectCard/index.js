@@ -14,7 +14,7 @@ display:flex;
 position:relative;
 margin-bottom:80px;
 background-color:${props=>props.bgcolor};
-padding-left:27px;
+
 flex-wrap:wrap;
 flex-direction:column;
 
@@ -35,7 +35,7 @@ display:flex;
 flex-direction:column;
 flex:1;
 padding-left:30px;
-padding-right:50px;
+padding-right:10px;
 margin-bottom:40px;
 
 `;
@@ -50,9 +50,21 @@ const Title = styled.h3`
 font-family: Spartan;
 font-style: normal;
 font-weight: 600;
-font-size: 64px;
+font-size: 50px;
 color:#F3F3F3;
 margin:0px;
+
+//Medium
+@media (min-width:801px) {
+    font-size:64px;
+
+}
+//Large
+
+@media (min-width:1000px) {
+    font-size:64px;
+
+}
 `;
 const Header = styled.h4`
 font-family: Spartan;
@@ -151,7 +163,7 @@ const ProjectCard = ({
                     <GitHubAlt color={themes[theme].body}></GitHubAlt>
                 </a>
                 <a target="_blank" href={hrefApp} rel="noopener noreferrer">
-                    <Button text="Vist App" bgcolor="#fff"></Button>    
+                    <Button text="Vist App" bgcolor={themes[theme].body} color={themes[theme].Highlight}></Button>    
                 </a>
             </SubContainer>
         </Container> 
