@@ -10,8 +10,23 @@ width: 100vw;
 height: 100%;
 display:flex;
 position:relative;
-margin-bottom:80px;
+margin-bottom:30px;
 margin-top:50px;
+flex-direction:column;
+
+//Medium
+@media (min-width:801px) {
+display:flex;
+flex-direction:row;
+margin-bottom:80px;
+}
+//Large
+
+@media (min-width:1000px) {
+display:flex;
+flex-direction:row;
+margin-bottom:80px;
+}
 `;
 const Container = styled.div`
 display:flex;
@@ -27,19 +42,21 @@ const Title = styled.h3`
 font-family: Spartan;
 font-style: normal;
 font-weight: 600;
-font-size: 48px;
+font-size: 24px;
 color:${props=>props.color};
 margin:0px;
 margin-bottom:9px;
-`;
-const Date = styled.h6`
-font-family: Spartan;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-color:${props=>props.color};
-margin:0px;
-margin-bottom:73px;
+
+
+//Medium
+@media (min-width:801px) {
+    font-size: 32px;
+}
+//Large
+
+@media (min-width:1000px) {
+    font-size: 48px;
+}
 `;
 const Text = styled.h6`
 font-family: Spartan;
@@ -50,6 +67,17 @@ color:${props=>props.color};
 margin:0px;
 margin-bottom:7px;
 width:522px;
+margin-top:20px;
+
+//Medium
+@media (min-width:801px) {
+    margin-top:0px; 
+}
+//Large
+
+@media (min-width:1000px) {
+    margin-top:0px;
+}
 `;
 const SmallText = styled.h6`
 font-family: Spartan;
@@ -58,13 +86,33 @@ font-weight: normal;
 font-size: 10px;
 color:${props=>props.color};
 margin:0px;
-margin-bottom:28px;
+margin-bottom:10px;
+
+//Medium
+@media (min-width:801px) {
+    margin-bottom:28px; 
+}
+//Large
+
+@media (min-width:1000px) {
+    margin-bottom:28px;
+}
 `;
 const ImgCont = styled.div`
-width:40%;
+width:70%;
 position:relative;
 padding:0;
 margin-left:30px;
+
+//Medium
+@media (min-width:801px) {
+    width:40%;
+}
+//Large
+
+@media (min-width:1000px) {
+    width:40%;
+}
 `;
 
 const ArtworkCard = ({
