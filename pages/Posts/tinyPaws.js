@@ -66,7 +66,9 @@ padding:0;
 
 const ImageHeader = styled.div`
 width:100%;
+height:400px;
 position:relative;
+overflow:hidden;
 margin:0;
 padding:0;
 `

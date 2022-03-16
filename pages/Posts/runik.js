@@ -56,17 +56,23 @@ margin-left:61px;
 
 `;
 const ImgCont = styled.div`
-width:90%;
+width:45%;
 position:relative;
 margin:0;
 padding:0;
 
 `;
 
+const FlexCont = styled.div`
+display:flex;
+`;
+
 
 const ImageHeader = styled.div`
 width:100%;
+height:400px;
 position:relative;
+overflow:hidden;
 margin:0;
 padding:0;
 `
@@ -94,16 +100,20 @@ export default function Runik() {
        <UserResearchCard></UserResearchCard>
        <PersonaCard>
             <Header color={themes[theme].Highlight}>Personas</Header>
-            <ImgCont>
-                <Image 
-                src={Persona1} 
-                layout='responsive'
-                ></Image>
-                <Image 
-                src={Persona2} 
-                layout='responsive'
-                ></Image>
-            </ImgCont>
+            <FlexCont>
+              <ImgCont>
+                  <Image 
+                  src={Persona1} 
+                  layout='responsive'
+                  ></Image>
+              </ImgCont>
+              <ImgCont>
+                  <Image 
+                  src={Persona2} 
+                  layout='responsive'
+                  ></Image>
+              </ImgCont>
+            </FlexCont>
        </PersonaCard>
        <PrototypeCard 
        text={`When it came to building the interface, we wanted our design language to be minimal, modern and elegant, with little nods to the fantastical worlds. From the nav bar to the footer and everything in-between, our end-user was the focus of every decision we made.`}

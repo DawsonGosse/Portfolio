@@ -11,14 +11,10 @@ import Bubble from '../../comps/Bubble';
 import Persona1 from '../../public/NuancePersona1.png';
 import Persona2 from '../../public/NuancePersona2.png';
 import PrototypeCard from '../../comps/PrototypeCard';
-import PhotoCard from '../../comps/PhotoCard';
-import UserTestingCard from '../../comps/UserTestingCard';
-import NuanceProto from '../../public/NuancePrototype.png'
-import NuanceHifi from '../../public/NuanceHifi.png'
-import NuanceUserTesting from '../../public/NuanceUserTesting.png'
 import WireFrame from '../../public/WireFrameNuance.png'
 import MidFi from '../../public/MidFiNuance.png'
 import HiFi from '../../public/HiFiNuance.png'
+import HeaderImage from '../../public/HeaderImageNuance.png'
 
 const Wrapper = styled.div`
 width:100%;
@@ -60,11 +56,21 @@ height:100%;
 margin-left:61px;
 `;
 const ImgCont = styled.div`
-width:90%;
+width:70%;
 position:relative;
 margin:0;
 padding:0;
 `;
+
+const ImageHeader = styled.div`
+width:100%;
+height:400px;
+position:relative;
+overflow:hidden;
+margin:0;
+padding:0;
+`
+
 
 
 var data = {
@@ -90,6 +96,13 @@ export default function Nuance() {
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
     <Wrapper>
+    <ImageHeader>
+      <Image 
+      src={HeaderImage} 
+      layout='responsive' 
+      objectFit='cover'
+      ></Image>
+    </ImageHeader>
     <ContentBlock>
        <ProjectCard 
        projTitle={data.Title} 
