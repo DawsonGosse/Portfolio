@@ -12,13 +12,25 @@ import { useRouter } from 'next/router';
 import { themes } from '../utils/variables'
 
 
+const Wrapper = styled.div`
+width:100%;
+
+//Large
+
+@media (min-width:1440px) {
+    width:1440px;
+    margin:auto;
+  }
+
+`
+
 const Container = styled.div`
   width:100%;
-  height:100%;
+  
 `;
 
 const ContentBlock = styled.div`
-  width:100vw;
+  width:100%;
   display:flex;
   flex-direction:column;
   margin-bottom:200px;
@@ -37,12 +49,14 @@ export default function Project() {
   const router = useRouter();
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
-    <Header  color={themes[theme].Header}>Projects</Header>
-    <ContentBlock>
-        <LargeCard onCardClick={()=>router.push("/../Posts/runik")} bgcolor={themes[theme].Header}></LargeCard>
-        <LargeCardFlip img={NuanceLarge} title='Nuance' type='UX/UI Design, Front-end Development' date="Jan 2021 - May 2021" roles='Roles - Lead Front-End developer, Designer' bio='Nuance is an educational app that challenges the user to question the views on certain topics.' bgcolor={themes[theme].Title} onCardClick={()=>router.push("/../Posts/nuance")}></LargeCardFlip>
-        <LargeCard img={PostersLarge} title='TinyPaws' type='UX/UI Design, WordPress' roles='Roles - Creator' bio='A wordpress site for a local cat adoption clinic' bgcolor={themes[theme].Alt} onCardClick={()=>router.push("/../Posts/tinyPaws")}></LargeCard>
-    </ContentBlock>
+      <Wrapper>
+      <Header  color={themes[theme].Header}>Projects</Header>
+      <ContentBlock>
+          <LargeCard onCardClick={()=>router.push("/../Posts/runik")} bgcolor={themes[theme].Header}></LargeCard>
+          <LargeCardFlip img={NuanceLarge} title='Nuance' type='UX/UI Design, Front-end Development' date="Jan 2021 - May 2021" roles='Roles - Lead Front-End developer, Designer' bio='Nuance is an educational app that challenges the user to question the views on certain topics.' bgcolor={themes[theme].Title} onCardClick={()=>router.push("/../Posts/nuance")}></LargeCardFlip>
+          <LargeCard img={PostersLarge} title='TinyPaws' type='UX/UI Design, WordPress' roles='Roles - Creator' bio='A wordpress site for a local cat adoption clinic' bgcolor={themes[theme].Alt} onCardClick={()=>router.push("/../Posts/tinyPaws")}></LargeCard>
+      </ContentBlock>
+      </Wrapper>
     <Footer></Footer>
   </Container>
   )

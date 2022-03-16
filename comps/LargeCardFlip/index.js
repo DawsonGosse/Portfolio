@@ -6,8 +6,8 @@ import { themes } from '../../utils/variables'
 
 
 const CardCont = styled.div`
-width: 100vw;
-height: 422px;
+width: 100%;
+max-height:422px;
 display:flex;
 position:relative;
 background-color:${props=>props.bgcolor};
@@ -25,15 +25,21 @@ padding-left:63px;
 padding-top:34px;
 z-index:2;
 
+
 //Medium
-@media (min-width:481px) {
-    width:50%;
+
+@media (min-width:425px) {
+    padding-left:63px;
   }
+
 //Large
 
-@media (min-width:769px) {
-    width:50%;
+@media (min-width:1024px) {
+  width:50%;
+  padding-bottom:0px;
+  padding-left:63px;
   }
+
 `;
 const TitleCont = styled.div`
 display:flex;
@@ -78,20 +84,16 @@ margin:0px;
 margin-bottom:28px;
 `;
 const ImgCont = styled.div`
-display:none;
+width:0%;
 position:relative;
-width:50%;
-height:422px;
+padding:0;
 
-//Medium
-@media (min-width:481px) {
-    display:none;
-  }
 //Large
 
-@media (min-width:769px) {
-    display:flex;
+@media (min-width:1024px) {
+  width:50%;
   }
+
 `;
 
 const LargeCardFlip = ({
@@ -109,7 +111,7 @@ const LargeCardFlip = ({
     
     return <CardCont onClick={()=>{onCardClick()}} bgcolor={bgcolor}>
         <ImgCont>
-            <Image src={img} layout="fill"></Image>
+            <Image src={img} layout="responsive"></Image>
         </ImgCont>
         <Container>
             <TitleCont>

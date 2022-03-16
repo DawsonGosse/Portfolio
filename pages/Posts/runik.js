@@ -14,7 +14,17 @@ import WireFrame from '../../public/WireFrameRunik.png'
 import MidFi from '../../public/MidFiRunik.png'
 import HiFi from '../../public/HiFiRunik.png'
 
+const Wrapper = styled.div`
+width:100%;
 
+//Large
+
+@media (min-width:1440px) {
+    width:1440px;
+    margin:auto;
+  }
+
+`
 
 const Container = styled.div`
   width:100%;
@@ -23,7 +33,7 @@ const Container = styled.div`
 `;
 
 const ContentBlock = styled.div`
-  width:100vw;
+  width:100%;
   display:flex;
   flex-direction:column;
   margin-bottom:200px;
@@ -69,6 +79,7 @@ export default function Runik() {
 
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
+    <Wrapper>
     <ImageHeader>
       <Image 
       src={HeaderImage} 
@@ -101,7 +112,7 @@ export default function Runik() {
        img3={HiFi}
        ></PrototypeCard>
     </ContentBlock>
-
+    </Wrapper>
     <Footer></Footer>
   </Container>
   )

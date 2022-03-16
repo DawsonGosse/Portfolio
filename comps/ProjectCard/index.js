@@ -8,7 +8,7 @@ import Button from "../Button";
 import GitHubAlt from "../Icons/GithubAlt";
 
 const CardCont = styled.div`
-width: 100vw;
+width: 100%;
 height: 100%;
 display:flex;
 position:relative;

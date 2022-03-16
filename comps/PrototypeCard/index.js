@@ -7,7 +7,7 @@ import Prototype from '../../public/RunikProto.png'
 
 
 const CardCont = styled.div`
-width: 100vw;
+width: 100%;
 display:flex;
 position:relative;
 flex-direction:column;

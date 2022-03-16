@@ -20,6 +20,18 @@ import WireFrame from '../../public/WireFrameNuance.png'
 import MidFi from '../../public/MidFiNuance.png'
 import HiFi from '../../public/HiFiNuance.png'
 
+const Wrapper = styled.div`
+width:100%;
+
+//Large
+
+@media (min-width:1440px) {
+    width:1440px;
+    margin:auto;
+  }
+
+`
+
 const Container = styled.div`
   width:100%;
   height:100%;
@@ -27,7 +39,7 @@ const Container = styled.div`
 `;
 
 const ContentBlock = styled.div`
-  width:100vw;
+  width:100%;
   display:flex;
   flex-direction:column;
   margin-bottom:200px;
@@ -77,6 +89,7 @@ export default function Nuance() {
 
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
+    <Wrapper>
     <ContentBlock>
        <ProjectCard 
        projTitle={data.Title} 
@@ -109,6 +122,7 @@ export default function Nuance() {
         img3={HiFi}
       ></PrototypeCard>
     </ContentBlock>
+    </Wrapper>
     <Footer></Footer>
   </Container>
   )

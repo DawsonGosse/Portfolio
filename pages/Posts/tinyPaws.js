@@ -14,7 +14,17 @@ import WireFrame from '../../public/WireFrameTinyPaws.png'
 import MidFi from '../../public/MidFiTinyPaws.png'
 import HiFi from '../../public/HiFiTinyPaws.png'
 
+const Wrapper = styled.div`
+width:100%;
 
+//Large
+
+@media (min-width:1440px) {
+    width:1440px;
+    margin:auto;
+  }
+
+`
 
 const Container = styled.div`
   width:100%;
@@ -23,7 +33,7 @@ const Container = styled.div`
 `;
 
 const ContentBlock = styled.div`
-  width:100vw;
+  width:100%;
   display:flex;
   flex-direction:column;
   margin-bottom:200px;
@@ -82,6 +92,7 @@ export default function TinyPaws() {
 
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
+    <Wrapper>
     <ImageHeader>
       <Image 
       src={HeaderImage} 
@@ -125,7 +136,7 @@ export default function TinyPaws() {
        img3={HiFi}
        ></PrototypeCard>
     </ContentBlock>
-
+    </Wrapper>
     <Footer></Footer>
   </Container>
   )

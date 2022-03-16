@@ -13,13 +13,25 @@ import { themes } from '../utils/variables'
 import Button from '../comps/Button';
 
 
+const Wrapper = styled.div`
+width:100%;
+
+//Large
+
+@media (min-width:1440px) {
+    width:1440px;
+    margin:auto;
+  }
+
+`
+
 const Container = styled.div`
   width:100%;
   height:100%;
 `;
 
 const ContentBlock1 = styled.div`
-  width:100vw;
+  width:100%;
   flex-wrap:wrap;
   flex-direction:column;
   padding: 0px 30px 0px;
@@ -42,7 +54,7 @@ const ContentBlock1 = styled.div`
   }
 `;
 const ContentBlock2 = styled.div`
-  width:100vw;
+  width:100%;
   flex-wrap:wrap;
   padding: 0px 30px 0px;
   display:flex;
@@ -63,7 +75,7 @@ const ContentBlock2 = styled.div`
 `;
 
 const ContentBlock3 = styled.div`
-  width:100vw;
+  width:100%;
   flex-wrap:wrap;
   flex-direction:column;
   display:flex;
@@ -73,13 +85,13 @@ const ContentBlock3 = styled.div`
   //Medium
 @media (min-width:481px) {
   justify-content:space-between;
-  flex-direction:row;
+  flex-direction:column;
   }
 //Large
 
 @media (min-width:769px) {
   justify-content:space-between;
-  flex-direction:row;
+  flex-direction:column;
   }
 `;
 const Header = styled.h2`
@@ -144,34 +156,36 @@ export default function Home() {
   const router = useRouter();
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')} ></NavBar>
-    <ContentBlock1>
-    <NameTitle></NameTitle>
-    <Description></Description>
-    </ContentBlock1>
-    <Header color={themes[theme].Header}>Highlights</Header>
-    <ContentBlock2>
-      <Card onCardClick={()=>router.push("/../Posts/runik")}></Card>
-      <Card 
-      title="Nuance"
-      type="Development - UI/UX"
-      img={Nuance}
-      onCardClick={()=>router.push("/../Posts/nuance")}
-      ></Card>
-      <Card 
-      title="TinyPaws"
-      type="UI/UX - Wordpress"
-      img={TinyPaws}
-      onCardClick={()=>router.push("/../Posts/tinyPaws")}
-      ></Card>
-    </ContentBlock2>
-    <ContentBlock3>
-      <Header color={themes[theme].Header}>Gallery</Header>
-      <Text color={themes[theme].Header} >Wondering how this could possibly get better? <br/><br/>
-  Come check out the gallery, a collection of some side projects and hobbie peices. everything from illustrations and photoshop projects, to posters and doodles can be found here!</Text>
-      <ButCont>
-        <Button text='View Gallery' bgcolor={themes[theme].Header} color={themes[theme].body} onCardClick={()=>router.push("/../artwork")}></Button>
-      </ButCont>
-    </ContentBlock3>
+    <Wrapper>
+      <ContentBlock1>
+      <NameTitle></NameTitle>
+      <Description></Description>
+      </ContentBlock1>
+      <Header color={themes[theme].Header}>Highlights</Header>
+      <ContentBlock2>
+        <Card onCardClick={()=>router.push("/../Posts/runik")}></Card>
+        <Card 
+        title="Nuance"
+        type="Development - UI/UX"
+        img={Nuance}
+        onCardClick={()=>router.push("/../Posts/nuance")}
+        ></Card>
+        <Card 
+        title="TinyPaws"
+        type="UI/UX - Wordpress"
+        img={TinyPaws}
+        onCardClick={()=>router.push("/../Posts/tinyPaws")}
+        ></Card>
+      </ContentBlock2>
+      <ContentBlock3>
+        <Header color={themes[theme].Header}>Gallery</Header>
+        <Text color={themes[theme].Header} >Wondering how this could possibly get better? <br/><br/>
+    Come check out the gallery, a collection of some side projects and hobbie peices.<br/> everything from illustrations and photoshop projects, to posters and doodles can be found here!</Text>
+        <ButCont>
+          <Button text='View Gallery' bgcolor={themes[theme].Header} color={themes[theme].body} onCardClick={()=>router.push("/../artwork")}></Button>
+        </ButCont>
+      </ContentBlock3>
+    </Wrapper>
     <Footer></Footer>
   </Container>
   )

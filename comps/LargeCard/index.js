@@ -6,8 +6,8 @@ import { themes } from '../../utils/variables'
 
 
 const CardCont = styled.div`
-width: 100vw;
-height: 422px;
+width:100%;
+max-height:422px;
 display:flex;
 position:relative;
 background-color:${props=>props.bgcolor};
@@ -21,19 +21,27 @@ const Container = styled.div`
 display:flex;
 justify-content:space-between;
 width:100%;
-padding-left:63px;
+padding-left:20px;
 padding-top:34px;
+padding-bottom:30px;
 z-index:2;
 
+
 //Medium
-@media (min-width:481px) {
-    width:50%;
+
+@media (min-width:425px) {
+    padding-left:63px;
   }
+
 //Large
 
-@media (min-width:769px) {
-    width:50%;
+@media (min-width:1024px) {
+  width:50%;
+  padding-bottom:0px;
+  padding-left:63px;
   }
+
+
 `;
 const TitleCont = styled.div`
 display:flex;
@@ -56,7 +64,7 @@ font-weight: normal;
 font-size: 14px;
 color:#F3F3F3;
 margin:0px;
-margin-bottom:73px;
+margin-bottom:40px;
 `;
 const Text = styled.h6`
 font-family: Spartan;
@@ -65,7 +73,8 @@ font-weight: normal;
 font-size: 14px;
 color:#F3F3F3;
 margin:0px;
-margin-bottom:7px;
+margin-bottom:20px;
+padding-right:20px;
 width:100%;
 `;
 const SmallText = styled.h6`
@@ -78,20 +87,18 @@ margin:0px;
 margin-bottom:28px;
 `;
 const ImgCont = styled.div`
-display:none;
+width:0%;
 position:relative;
-width:50%;
-height:422px;
+padding:0;
+overflow:hidden;
 
-//Medium
-@media (min-width:481px) {
-    display:none;
-  }
 //Large
 
-@media (min-width:769px) {
-    display:flex;
+@media (min-width:1024px) {
+  width:50%;
+  
   }
+
 `;
 
 const LargeCard = ({
@@ -118,7 +125,7 @@ const LargeCard = ({
             </TitleCont>
         </Container>
         <ImgCont>
-            <Image src={img} layout="fill"></Image>
+            <Image src={img} layout="responsive"></Image>
         </ImgCont>
     </CardCont>
 }
