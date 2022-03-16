@@ -8,15 +8,25 @@ import { useEffect, useState } from 'react';
 import Ana from '../public/Artwork/Ana.png'
 import Boston from '../public/Artwork/Boston.jpg'
 import LostInADream from '../public/Artwork/LostInADream.png'
-import Proms from '../public/Artwork/Proms.jpg'
 import Walradad from '../public/Artwork/Walradad.png'
 import PixelArt1 from '../public/PixelArt1.PNG'
 import PixelArt2 from '../public/PixelArt2.PNG'
 import Doodle1 from '../public/Doodle1.png'
 import Doodle2 from '../public/Doodle2.png'
+import GalleryCard from '../comps/GalleryCard';
 
 
+const Wrapper = styled.div`
+width:100%;
 
+//Large
+
+@media (min-width:1440px) {
+    width:1440px;
+    margin:auto;
+  }
+
+`
 
 const Container = styled.div`
   width:100%;
@@ -24,10 +34,12 @@ const Container = styled.div`
 `;
 
 const ContentBlock = styled.div`
-  width:100vw;
+  width:100%;
   display:flex;
-  flex-direction:column;
+  flex-wrap:wrap;
+
   margin-bottom:200px;
+  justify-content:space-evenly;
 `;
 const Header = styled.h2`
   font-family: Spartan;
@@ -46,17 +58,60 @@ export default function Artwork() {
 
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')}></NavBar>
+    <Wrapper>
     <ContentBlock>
-        <ArtworkCard img={Proms} title='The Proms' type='Poster' roles='Created in Illustrator' date='May 2021'></ArtworkCard>
-        <ArtworkCard img={LostInADream} title='Lost In A Dream' type='Poster' roles='Created in Photoshop' date='Dec 2021'></ArtworkCard>
-        <ArtworkCard img={Ana} title='Ana De Armas' type='Portrait Illustration' roles='Created in Photoshop' date='Nov 2021'></ArtworkCard>
-        <ArtworkCard img={Walradad} title='Walradad' type='Poster' roles='Created in Photoshop' date='Oct 2021'></ArtworkCard>
-        <ArtworkCard img={Boston} title='Boston Dynamics' type='Illustration' roles='Created in Illustrator' date='Mar 2021'></ArtworkCard>
-        <ArtworkCard img={PixelArt1} title='Pixel Artwork 1' type='PixelArt' roles='Created in Aseprite' date='Aug 2021'></ArtworkCard>
-        <ArtworkCard img={PixelArt2} title='Pixel Artwork 2' type='PixelArt' roles='Created in Aseprite' date='Aug 2021'></ArtworkCard>
-        <ArtworkCard img={Doodle1} title='Doodle 1' type='Drawing' roles='Hand drawn' date='Jan 2022'></ArtworkCard>
-        <ArtworkCard img={Doodle2} title='Doodle 2' type='Drawing' roles='Hand drawn' date='Jul 2021'></ArtworkCard>
+    <GalleryCard></GalleryCard>
+    <GalleryCard 
+    Img={LostInADream} 
+    Header="Lost in a Dream"  
+    SubHeader="Poster" 
+    Type="Created in Photoshop" 
+    Dates="Nov 2021 - Dec 2021"></GalleryCard>
+    <GalleryCard 
+    Img={Ana} 
+    Header="Ana de Armas"  
+    SubHeader="Portrait Drawing" 
+    Type="Created in Photoshop" 
+    Dates="Oct 2021 - Nov 2021"></GalleryCard>
+    <GalleryCard 
+    Img={Walradad} 
+    Header="Walradad"  
+    SubHeader="Poster" 
+    Type="Created in Photoshop" 
+    Dates="Sept 2021 - Oct 2021"></GalleryCard>
+    <GalleryCard 
+    Img={Boston} 
+    Header="Boston Dynamics"  
+    SubHeader="Illustration" 
+    Type="Created in Illustrator" 
+    Dates="Feb 2021 - May 2021"></GalleryCard>
+    <GalleryCard 
+    Img={PixelArt1} 
+    Header="Pixel Art 1"  
+    SubHeader="Artwork" 
+    Type="Created in Aesprite" 
+    Dates="Jun 2021 - July 2021"></GalleryCard>
+    <GalleryCard 
+    Img={PixelArt2} 
+    Header="Pixel Art 2"  
+    SubHeader="Artwork" 
+    Type="Created in Aesprite" 
+    Dates="Jun 2021 - July 2021"></GalleryCard>
+    <GalleryCard 
+    Img={Doodle1} 
+    Header="Doodle 1"  
+    SubHeader="Drawing" 
+    Type="Hand Drawn With Pen" 
+    Dates="July 2021 - Aug 2021"></GalleryCard>
+    <GalleryCard 
+    Img={Doodle2} 
+    Header="Doodle 2"  
+    SubHeader="Drawing" 
+    Type="Hand Drawn With Pen" 
+    Dates="July 2021 - Aug 2021"></GalleryCard>
+    
     </ContentBlock>
+    </Wrapper>
     <Footer></Footer>
   </Container>
   )
