@@ -11,6 +11,9 @@ import TinyPaws from '../public/TinyPaws.png'
 import { useRouter } from 'next/router';
 import { themes } from '../utils/variables'
 import Button from '../comps/Button';
+import Lottie from 'react-lottie';
+import animationData from '../public/lottie/animation.json';
+
 
 
 const Wrapper = styled.div`
@@ -31,13 +34,14 @@ const Container = styled.div`
 `;
 
 const ContentBlock1 = styled.div`
+  position:relative;
   width:100%;
   flex-wrap:wrap;
   flex-direction:column;
   padding: 0px 30px 0px;
   display:flex;
   justify-content:space-evenly;
-  margin-bottom:200px;
+  margin-bottom:50px;
 
   //Medium
 @media (min-width:481px) {
@@ -101,6 +105,7 @@ const Header = styled.h2`
   font-size: 24px;
   color:${props=>props.color};
   margin-left:30px;
+  margin-top:20px;
 
 
 //Medium
@@ -149,18 +154,47 @@ margin-left:30px;
     margin-left:61px;
   }
 `
+const AnimationCont = styled.div`
+display:none;
+
+//Medium
+@media (min-width:1250px) {
+  position:absolute;
+  display:block;
+  top:100px;
+  right:100px;
+  }
+
+`;
 
 
 export default function Home() {
   const {theme, setTheme} = useTheme();
   const router = useRouter();
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
+
   return (<Container>
     <NavBar onButtonClick={()=>setTheme(theme==='dark'?'default':'dark')} ></NavBar>
     <Wrapper>
       <ContentBlock1>
       <NameTitle></NameTitle>
-      <Description></Description>
+      <AnimationCont>
+        <Lottie 
+        options={defaultOptions}
+          height={500}
+          width={500}
+        />
+      </AnimationCont>
       </ContentBlock1>
+      <Description></Description>
       <Header color={themes[theme].Header}>Highlights</Header>
       <ContentBlock2>
         <Card onCardClick={()=>router.push("/../Posts/runik")}></Card>

@@ -9,13 +9,13 @@ margin-top:50px;
 //Medium
 @media (min-width:481px) {
     width:396px;
-    margin-top:100px;
+    margin-top:80px;
   }
 //Large
 
 @media (min-width:769px) {
     width:600px;
-    margin-top:123px;
+    margin-top:90px;
   }
 `;
 

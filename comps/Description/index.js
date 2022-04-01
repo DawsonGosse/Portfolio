@@ -2,20 +2,22 @@ import styled from "styled-components";
 import { useTheme } from '../../utils/provider'
 import { themes } from '../../utils/variables'
 
+
 const Container = styled.div`
-margin-top:50px;
 width:200px;
+margin-left:30px;
+margin-bottom:50px;
 
 //Medium
 @media (min-width:481px) {
     width:300px;
-    margin-top:100px;
+    margin-left:61px;
   }
 //Large
 
 @media (min-width:769px) {
     width:300px;
-    margin-top:123px;
+    margin-left:61px;
   }
 `;
 
@@ -36,7 +38,6 @@ color:${props=>props.color};
 
 @media (min-width:769px) {
     font-size:20px;
-    text-align: right;
   }
 `;
 
