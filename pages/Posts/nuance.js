@@ -111,7 +111,7 @@ export default function Nuance() {
        projTeamSize={data.TeamSize} 
        problem={data.problem} 
        solution={data.solution}
-       hrefApp={"https://github.com/DawsonGosse/Nuance-App"}
+       hrefApp={"https://hosted-nuacne-oo0zozfdx-hannahmak.vercel.app/"}
        hrefGit={"https://github.com/DawsonGosse/Nuance-App"}
        ></ProjectCard>
        <UserResearchCard 
